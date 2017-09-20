@@ -26,11 +26,10 @@ GD bbPress Attachments 2.5 supports bbPress 2.5 or newer. Older bbPress are no l
 GD bbPress Attachments 2.5 is tested with BuddyPress 2.6 and newer and it works fine if you enable BuddyPress support in bbPress plugin for Group Forums. Make sure you enable JavaScript and CSS Settings Always Include option in the Attachments plugin settings.
 
 = Upgrade to GD bbPress Toolbox Pro =
-Pro version contains many more useful features 10 more BBCodes (including Hide and Spoiler), BBCodes editor toolbar, report topics and replies, SEO features, many more views, notification email control, BBCodes toolbar, great new responsive admin UI, enhanced attachments features and additional widgets.
-[GD bbPress Toolbox Pro](https://plugins.dev4press.com/gd-bbpress-toolbox/)
+Pro version contains many more useful features 10 more BBCodes (including Hide and Spoiler), BBCodes editor toolbar, report topics and replies, SEO features, many more views, notification email control, BBCodes toolbar, great new responsive admin UI, enhanced attachments features and additional widgets. For more information: [GD bbPress Toolbox Pro](https://plugins.dev4press.com/gd-bbpress-toolbox/)
 
 = Premium dev4Press.com plugins for bbPress =
-* [GD bbPress Toolbox Pro](https://plugins.dev4press.com/gd-bbpress-toolbox/) - ultimate collection of features for bbPress
+* [GD bbPress Toolbox Pro](https://plugins.dev4press.com/gd-bbpress-toolbox/) - collection of features for bbPress
 * [GD Topic Polls Pro](https://plugins.dev4press.com/gd-topic-polls/) - add polls to the bbPress topics
 * [GD Topic Prefix Pro](https://plugins.dev4press.com/gd-topic-prefix/) - add customizable bbPress topic prefixes
 * [GD Content Tools Pro](https://plugins.dev4press.com/gd-content-tools/) - meta box for the topic and reply form
