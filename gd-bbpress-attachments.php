@@ -10,7 +10,7 @@ Author URI: https://www.dev4press.com/
 Text Domain: gd-bbpress-attachments
 
 == Copyright ==
-Copyright 2008 - 2018 Milan Petrovic (email: milan@gdragon.info)
+Copyright 2008 - 2018 Milan Petrovic (email: support@dev4press.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
