@@ -1,8 +1,8 @@
 === GD bbPress Attachments ===
 Contributors: GDragoN
 Donate link: https://plugins.dev4press.com/gd-bbpress-attachments/
-Version: 2.6
-Tags: bbpress, attachments, gdragon, dev4press, upload, forum, topic, reply, media library, limit, meta
+Version: 3.0
+Tags: dev4press, bbpress, attachments, upload, media library, forum, topic, reply, limit, meta
 Requires at least: 4.4
 Requires PHP: 5.5
 Tested up to: 4.9
@@ -20,19 +20,46 @@ On the admin side, topic and reply panels have a column with attachments count, 
 Supported languages: English, Serbian, Swedish, Polish, Dutch, German, Italian, Slovak, French, Spanish, Persian, Portuguese.
 
 = bbPress Plugin Versions =
-GD bbPress Attachments 2.6 supports bbPress 2.5 or newer. Older bbPress are no longer supported!
+GD bbPress Attachments 3.0 supports bbPress 2.5 or newer. Older bbPress are no longer supported!
 
 = BuddyPress Support =
-GD bbPress Attachments 2.6 is tested with BuddyPress 2.6 and newer and it works fine if you enable BuddyPress support in bbPress plugin for Group Forums. Make sure you enable JavaScript and CSS Settings Always Include option in the Attachments plugin settings.
+GD bbPress Attachments 2.6 is tested with BuddyPress 3.0 using bbPress for Groups forums. Make sure you enable JavaScript and CSS Settings Always Include option in the plugin settings.
 
 = More free Dev4Press plugins for bbPress =
 * [GD bbPress Tools](https://wordpress.org/plugins/gd-bbpress-tools/) - various expansion tools for forums
 * [GD Topic Polls](https://wordpress.org/plugins/gd-topic-polls/) - add polls to the bbPress topics
 
 = Upgrade to GD bbPress Toolbox Pro =
-Pro version contains many more useful features 10 more BBCodes (including Hide and Spoiler), BBCodes editor toolbar, report topics and replies, SEO features, many more views, notification email control, BBCodes toolbar, great new responsive admin UI, enhanced attachments features and additional widgets. For more information: [GD bbPress Toolbox Pro](https://plugins.dev4press.com/gd-bbpress-toolbox/)
+Pro version contains many more great features:
 
-= Premium Dev4Press plugins for bbPress =
+* Enhanced attachments features
+* BBCodes editor toolbar
+* Report topics and replies
+* Say thanks to forum members
+* Various SEO features
+* Various privacy features
+* Enable TinyMCE editor
+* Private topics and replies
+* Auto closing of inactive topics
+* Notification email control
+* Show user stats in topics and replies
+* Track new and unread topics
+* Great new responsive admin UI
+* Setup Wizard
+* Forum based settings overrides
+* Improved BuddyPress support
+* 40 BBCodes (including Hide and Spoiler)
+* 19 Topics Views
+* 8 additional widgets
+* Many great tweaks
+* And much, much more
+
+With more features on the roadmap exclusively for Pro version.
+
+* More information about [GD bbPress Toolbox Pro](https://plugins.dev4press.com/gd-bbpress-toolbox/)
+* Compare [Free vs. Pro Plugin](https://plugins.dev4press.com/gd-bbpress-toolbox/articles/toolbox-pro-vs-free-plugins/)
+
+= Premium dev4Press.com plugins for bbPress =
 * [GD bbPress Toolbox Pro](https://plugins.dev4press.com/gd-bbpress-toolbox/) - collection of features for bbPress
 * [GD Topic Polls Pro](https://plugins.dev4press.com/gd-topic-polls/) - add polls to the bbPress topics
 * [GD Topic Prefix Pro](https://plugins.dev4press.com/gd-topic-prefix/) - add customizable bbPress topic prefixes
@@ -57,10 +84,6 @@ Pro version contains many more useful features 10 more BBCodes (including Hide a
 * Where can I configure the plugin?
 Open the Forums menu, and you will see Attachments item there. This will open a panel with global plugin settings.
 
-* What are the common problems that can prevent upload to work?
-In some cases, it can happen that jQuery is not included on the page, even so, the bbPress requires it to be loaded. That can happen if something else is unloading jQuery. If the jQuery is not present, the upload will not work.
-Another common issue is that WordPress Media Library upload is not working. If that is not set up, attachments upload can't work.
-
 * Why is Media Library required?
 All attachments uploads are handled by the WordPress Media Library, and plugin uses native WordPress upload functions. When the file is uploaded it will be available through Media Library. Consult WordPress documentation about Media Library requirements.
 
@@ -72,6 +95,10 @@ No. Plugin requires bbPress 2.5 or higher plugin.
 
 * Does this plugin work with bbPress plugin used as sitewide forums for BuddyPress plugin?
 Yes. But, make sure to enable 'Always Include' option for JavaScript and CSS.
+
+* What are the common problems that can prevent upload to work?
+In some cases, it can happen that jQuery is not included on the page, even so, the bbPress requires it to be loaded. That can happen if something else is unloading jQuery. If the jQuery is not present, the upload will not work.
+Another common issue is that WordPress Media Library upload is not working. If that is not set up, attachments upload can't work.
 
 == Translations ==
 * English
@@ -89,10 +116,15 @@ Yes. But, make sure to enable 'Always Include' option for JavaScript and CSS.
 * Italian
 
 == Upgrade Notice ==
-= 2.6 =
+= 3.0 =
 Various fixes and updates.
 
 == Changelog ==
+= 3.0 (2018.07.26) =
+* New interface for the plugin settings panel
+* New panel with advanced settings
+* Updated toolbar icon to use bbPress dashicon
+
 = 2.6 (2018.04.27) =
 * Updated plugin requirements
 * Sanitize file name stored for the upload errors

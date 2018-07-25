@@ -61,12 +61,12 @@ class gdbbAtt_Front {
     public function wp_enqueue_scripts() {
         if (d4p_bba_o('include_always') == 1 || d4p_is_bbpress()) {
             if (d4p_bba_o('include_css') == 1) {
-                wp_enqueue_style('d4p-bbattachments-css', GDBBPRESSATTACHMENTS_URL.'css/gd-bbpress-attachments.css', array(), GDBBPRESSATTACHMENTS_VERSION);
+                wp_enqueue_style('d4p-bbattachments-css', GDBBPRESSATTACHMENTS_URL.'css/front.css', array(), GDBBPRESSATTACHMENTS_VERSION);
             }
 
             if (d4p_bba_o('include_js') == 1) {
                 wp_enqueue_script('jquery');
-                wp_enqueue_script('d4p-bbattachments-js', GDBBPRESSATTACHMENTS_URL.'js/gd-bbpress-attachments.js', array('jquery'), GDBBPRESSATTACHMENTS_VERSION, true);
+                wp_enqueue_script('d4p-bbattachments-js', GDBBPRESSATTACHMENTS_URL.'js/front.js', array('jquery'), GDBBPRESSATTACHMENTS_VERSION, true);
             }
         }
     }
@@ -76,11 +76,11 @@ class gdbbAtt_Front {
             global $gdbbpress_attachments;
 
         ?><script type="text/javascript">
-                /* <![CDATA[ */
-                var gdbbPressAttachmentsInit = {
-                    max_files: <?php echo apply_filters('d4p_bbpressattchment_allow_upload', $gdbbpress_attachments->get_max_files(), bbp_get_forum_id()); ?>
-                };
-                /* ]]> */
+            /* <![CDATA[ */
+            var gdbbPressAttachmentsInit = {
+                max_files: <?php echo apply_filters('d4p_bbpressattchment_allow_upload', $gdbbpress_attachments->get_max_files(), bbp_get_forum_id()); ?>
+            };
+            /* ]]> */
         </script><?php
 
         }

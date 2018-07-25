@@ -18,18 +18,7 @@ class gdbbA_Admin {
         }
 
         if ($this->admin_plugin) {
-            wp_enqueue_style('gd-bbpress-attachments', GDBBPRESSATTACHMENTS_URL."css/gd-bbpress-attachments_admin.css", array(), GDBBPRESSATTACHMENTS_VERSION);
-        }
-
-        if (isset($_GET['proupgradebba']) && $_GET['proupgradebba'] == 'hide') {
-            global $gdbbpress_attachments;
-
-            $gdbbpress_attachments->o['upgrade_to_pro_260'] = 0;
-
-            update_option('gd-bbpress-attachments', $gdbbpress_attachments->o);
-
-            wp_redirect(remove_query_arg('proupgradebba'));
-            exit;
+            wp_enqueue_style('gd-bbpress-attachments', GDBBPRESSATTACHMENTS_URL."css/admin.css", array(), GDBBPRESSATTACHMENTS_VERSION);
         }
     }
 
@@ -39,23 +28,6 @@ class gdbbA_Admin {
 
         add_filter('plugin_action_links', array(&$this, 'plugin_actions'), 10, 2);
         add_filter('plugin_row_meta', array(&$this, 'plugin_links'), 10, 2);
-    }
-
-    function upgrade_notice() {
-        global $gdbbpress_attachments;
-
-        if ($gdbbpress_attachments->o['upgrade_to_pro_260'] == 1) {
-            $no_thanks = add_query_arg('proupgradebba', 'hide');
-
-            echo '<div class="updated d4p-updated">';
-                echo __("Thank you for using this plugin. Please, take a few minutes and check out the GD bbPress Toolbox Pro plugin with many new and improved features.", "gd-bbpress-attachments");
-                echo '<br/>'.__("Buy GD bbPress Toolbox Pro version or Dev4Press Plugins Pack and get 15% discount using this coupon", "gd-bbpress-attachments");
-                echo ': <strong style="color: #c00;">GDBBPTOPRO</strong><br/>';
-                echo '<strong><a href="https://plugins.dev4press.com/gd-bbpress-toolbox/" target="_blank">'.__("Official Website", "gd-bbpress-attachments")."</a></strong> | ";
-                echo '<strong><a href="https://club.dev4press.com/" target="_blank">'.__("Dev4Press Plugins Pack", "gd-bbpress-attachments")."</a></strong> | ";
-                echo '<a href="'.$no_thanks.'">'.__("Don't display this message anymore", "gd-bbpress-attachments")."</a>.";
-            echo '</div>';
-        }
     }
 
     public function admin_menu() {
