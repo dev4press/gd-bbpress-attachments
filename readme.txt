@@ -324,10 +324,12 @@ New plugin interface. New Images and Advanced settings panels. Various other upd
 
 == Screenshots ==
 1. Main plugins settings panel
-2. Reply with attachments and file type icons
-3. Image attachments with upload errors
-4. Attachments with delete and detach actions
+2. Images settings panel
+3. Advanced settings panel
+4. Reply with attachments and file type icons
 5. Attachments upload elements in the form
 6. Single forum meta box with settings
 7. Icons for the forums with attachments
 8. Thumbnails displayed in line
+9. Attachments with delete and detach actions
+10. Image attachments with upload errors
