@@ -45,82 +45,78 @@ msgid "Settings"
 msgstr ""
 
 #: code/admin.php:55
-msgid "FAQ"
-msgstr ""
-
-#: code/admin.php:56
 msgid "Upgrade to GD bbPress Toolbox Pro"
 msgstr ""
 
-#: code/admin.php:67
+#: code/admin.php:66
 msgid "Website"
 msgstr ""
 
-#: code/admin.php:68
+#: code/admin.php:67
 msgid "On Twitter"
 msgstr ""
 
-#: code/admin.php:69
+#: code/admin.php:68
 msgid "On Facebook"
 msgstr ""
 
-#: code/admin.php:73
+#: code/admin.php:72
 msgid "Get Help"
 msgstr ""
 
-#: code/admin.php:74
+#: code/admin.php:73
 msgid "General Plugin Information"
 msgstr ""
 
-#: code/admin.php:75
+#: code/admin.php:74
 msgid "Home Page on Dev4Press.com"
 msgstr ""
 
-#: code/admin.php:76
+#: code/admin.php:75
 msgid "Home Page on WordPress.org"
 msgstr ""
 
-#: code/admin.php:77
+#: code/admin.php:76
 msgid "Getting Plugin Support"
 msgstr ""
 
-#: code/admin.php:78
+#: code/admin.php:77
 msgid "Support Forum on Dev4Press.com"
 msgstr ""
 
-#: code/admin.php:79
+#: code/admin.php:78
 msgid "Support Forum on WordPress.org"
 msgstr ""
 
-#: code/admin.php:80
+#: code/admin.php:79
 msgid "Support Forum on Dev4Press"
 msgstr ""
 
-#: code/admin.php:85
+#: code/admin.php:84
 msgid "On Dev4Press website you can find many useful plugins, themes and tutorials, all for WordPress. Please, take a few minutes to browse some of these resources, you might find some of them very useful."
 msgstr ""
 
-#: code/admin.php:86
+#: code/admin.php:85
 msgid "Plugins"
 msgstr ""
 
-#: code/admin.php:86
+#: code/admin.php:85
 msgid "We have more than 10 plugins available, some of them are commercial and some are available for free."
 msgstr ""
 
-#: code/admin.php:87
+#: code/admin.php:86
 msgid "Knowledge Base"
 msgstr ""
 
-#: code/admin.php:87
+#: code/admin.php:86
 msgid "Premium and free tutorials for our plugins themes, and many general and practical WordPress tutorials."
 msgstr ""
 
-#: code/admin.php:88
+#: code/admin.php:87
 msgid "Support Forums"
 msgstr ""
 
-#: code/admin.php:88
+#: code/admin.php:87
 msgid "Premium support forum for all with valid licenses to get help. Also, report bugs and leave suggestions."
 msgstr ""
 
@@ -190,12 +186,22 @@ msgstr ""
 msgid "Maximum files to upload"
 msgstr ""
 
-#: forms/attachments/meta_forum.php:24
-msgid "Hide list of attachements from visitors"
+#: forms/attachments/meta_forum.php:22
+#: forms/tabs/attachments.php:25
+msgid "at once"
 msgstr ""
 
 #: forms/attachments/meta_forum.php:25
+msgid "Hide list of attachements"
+msgstr ""
+
+#: forms/attachments/meta_forum.php:26
 msgid "Hide From Visitors"
+msgstr ""
+
+#: forms/attachments/meta_forum.php:28
+#: forms/tabs/attachments.php:32
+msgid "From visitors"
 msgstr ""
 
 #: forms/more/toolbox.php:2
@@ -428,16 +434,8 @@ msgstr ""
 msgid "These settings can be overriden for individual forums."
 msgstr ""
 
-#: forms/tabs/attachments.php:25
-msgid "at once"
-msgstr ""
-
 #: forms/tabs/attachments.php:29
 msgid "Hide attachements"
-msgstr ""
-
-#: forms/tabs/attachments.php:32
-msgid "From visitors"
 msgstr ""
 
 #: forms/tabs/attachments.php:40
