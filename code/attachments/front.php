@@ -8,7 +8,7 @@ class gdbbAtt_Front {
         'xml' => 'xml', 
         'excel' => 'xla|xls|xlsx|xlt|xlw|xlam|xlsb|xlsm|xltm', 
         'word' => 'docx|dotx|docm|dotm', 
-        'image' => 'png|gif|jpg|jpeg|jpe|jp|bmp|tif|tiff', 
+        'image' => 'png|gif|jpg|jpeg|jpe|jp|bmp|tif|tiff|svg', 
         'psd' => 'psd', 
         'ai' => 'ai', 
         'archive' => 'zip|rar|gz|gzip|tar',

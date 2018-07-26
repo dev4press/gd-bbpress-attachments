@@ -37,8 +37,6 @@ class gdbbA_Admin {
     }
 
     public function admin_load_hooks() {
-        if (GDBBPRESSATTACHMENTS_WPV < 33) return;
-
         foreach ($this->page_ids as $id) {
             add_action('load-'.$id, array(&$this, 'load_admin_page'));
         }

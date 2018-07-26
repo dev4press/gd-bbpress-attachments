@@ -13,17 +13,28 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Implements attachments upload to the topics and replies in bbPress plugin through media library and add additional forum based controls.
 
 == Description ==
-Attachments for forum topics and replies are handled through WordPress media library. You can control file sizes from the main plugin settings panel, or you can do it individually for each forum you have set. You can limit the number of files user can attach for each topic and reply. The plugin can embed a list of attached files into topics and replies, and images can be displayed as thumbnails. All upload errors are logged and topic/reply author and administrators can see those errors.
+GD bbPress Attachments is an easy to use plugin for WordPress and bbPress for implementing files upload for bbPress Forums topics and replies. You can control file sizes from the main plugin settings panel, or you can change some attachments settings for each forum individually. Currently included features:
 
-On the admin side, topic and reply panels have a column with attachments count, and on the individual edit pages you will see meta box with the list of attachments and upload errors.
-
-Supported languages: English, Serbian, Swedish, Polish, Dutch, German, Italian, Slovak, French, Spanish, Persian, Portuguese.
+* Attachments are handled through WordPress media library. 
+* Limit the number of files to upload at once.
+* Embed a list of attached files into topics and replies.
+* Attachment icon in the topics list for topics with attachments.
+* Attachments icons for file types in the attachments list.
+* Option to control if visitors can see list of attachments.
+* Display uploaded images as thumbnails.
+* Control thumbnail size.
+* Control thumbnail CLASS and REL attributes.
+* Upload errors can be logged .
+* Post uthor and administrators can see errors.
+* Administration: attachments count for topics and replies.
+* Administration: metabox for settings override for forums.
+* Administration: metabox with attachments list and errors for topics and replies.
 
 = bbPress Plugin Versions =
 GD bbPress Attachments 3.0 supports bbPress 2.5 or newer. Older bbPress are no longer supported!
 
 = BuddyPress Support =
-GD bbPress Attachments 2.6 is tested with BuddyPress 3.0 using bbPress for Groups forums. Make sure you enable JavaScript and CSS Settings Always Include option in the plugin settings.
+GD bbPress Attachments 3.0 is tested with BuddyPress 3.0 using bbPress for Groups forums. Make sure you enable JavaScript and CSS Settings Always Include option in the plugin settings.
 
 = More free Dev4Press plugins for bbPress =
 * [GD bbPress Tools](https://wordpress.org/plugins/gd-bbpress-tools/) - various expansion tools for forums
@@ -33,6 +44,7 @@ GD bbPress Attachments 2.6 is tested with BuddyPress 3.0 using bbPress for Group
 Pro version contains many more great features:
 
 * Enhanced attachments features
+* Limit file types attachments uplod
 * BBCodes editor toolbar
 * Report topics and replies
 * Say thanks to forum members
@@ -81,22 +93,19 @@ With more features on the roadmap exclusively for Pro version.
 * Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==
-* Where can I configure the plugin?
+= Where can I configure the plugin? =
 Open the Forums menu, and you will see Attachments item there. This will open a panel with global plugin settings.
 
-* Why is Media Library required?
+= Why is Media Library required? =
 All attachments uploads are handled by the WordPress Media Library, and plugin uses native WordPress upload functions. When the file is uploaded it will be available through Media Library. Consult WordPress documentation about Media Library requirements.
 
-* Will this plugin work with standalone bbPress installation?
+= Will this plugin work with standalone bbPress installation? =
 No. This plugin requires the plugin versions of bbPress 2.5 or higher.
 
-* Does this plugin work with bbPress that is part of BuddyPress plugin?
-No. Plugin requires bbPress 2.5 or higher plugin.
-
-* Does this plugin work with bbPress plugin used as sitewide forums for BuddyPress plugin?
+= Does this plugin work with bbPress plugin used as sitewide forums for BuddyPress plugin? =
 Yes. But, make sure to enable 'Always Include' option for JavaScript and CSS.
 
-* What are the common problems that can prevent upload to work?
+= What are the common problems that can prevent upload to work? =
 In some cases, it can happen that jQuery is not included on the page, even so, the bbPress requires it to be loaded. That can happen if something else is unloading jQuery. If the jQuery is not present, the upload will not work.
 Another common issue is that WordPress Media Library upload is not working. If that is not set up, attachments upload can't work.
 
@@ -117,12 +126,15 @@ Another common issue is that WordPress Media Library upload is not working. If t
 
 == Upgrade Notice ==
 = 3.0 =
-Various fixes and updates.
+New plugin interface. New Images and Advanced settings panels. Various other updates and improvements.
 
 == Changelog ==
 = 3.0 (2018.07.26) =
 * New interface for the plugin settings panel
 * New panel with advanced settings
+* New panel with images settings
+* New support for thumbnails for PDF and SVG file types
+* Updated settings form with proper field types
 * Updated toolbar icon to use bbPress dashicon
 
 = 2.6 (2018.04.27) =
