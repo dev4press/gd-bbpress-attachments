@@ -1,7 +1,7 @@
 === GD bbPress Attachments ===
 Contributors: GDragoN
 Donate link: https://plugins.dev4press.com/gd-bbpress-attachments/
-Version: 3.0
+Version: 3.0.1
 Tags: dev4press, bbpress, attachments, upload, media library, forum, topic, reply, limit, meta
 Requires at least: 4.4
 Requires PHP: 5.5
@@ -73,9 +73,9 @@ With more features on the roadmap exclusively for Pro version.
 
 = Premium dev4Press.com plugins for bbPress =
 * [GD bbPress Toolbox Pro](https://plugins.dev4press.com/gd-bbpress-toolbox/) - collection of features for bbPress
+* [GD Power Search Pro](https://plugins.dev4press.com/gd-power-search-for-bbpress/) - advanced search for bbPress
 * [GD Topic Polls Pro](https://plugins.dev4press.com/gd-topic-polls/) - add polls to the bbPress topics
 * [GD Topic Prefix Pro](https://plugins.dev4press.com/gd-topic-prefix/) - add customizable bbPress topic prefixes
-* [GD Content Tools Pro](https://plugins.dev4press.com/gd-content-tools/) - meta box for the topic and reply form
 
 == Installation ==
 = General Requirements =
@@ -129,6 +129,9 @@ Another common issue is that WordPress Media Library upload is not working. If t
 New plugin interface. New Images and Advanced settings panels. Various other updates and improvements.
 
 == Changelog ==
+= 3.0.1 (2018.10.05) =
+* Fixed problem with attachments save reply method passed arguments
+
 = 3.0 (2018.07.26) =
 * New interface for the plugin settings panel
 * New panel with advanced settings
@@ -144,13 +147,13 @@ New plugin interface. New Images and Advanced settings panels. Various other upd
 * Fixed potential stored XSS vulnerability (thanks to [Luigi Gubello](https://www.gubello.me/blog/) for reporting)
 * Fixed few typos and missing translation strings
 
-= 2.5 =
+= 2.5 (2017.09.20) =
 * Updated JS and CSS files are by default always loaded
 * Updated WordPress minimal requirement to 4.2
 * Updated several broken URL's
 * Updated and improved readme file
 
-= 2.4 =
+= 2.4 (2016.09.24) =
 * Added download attribute to attached files links
 * Updated sanitation of the plugin settings on save
 * Updated PHP minimal requirement to 5.3
@@ -158,21 +161,21 @@ New plugin interface. New Images and Advanced settings panels. Various other upd
 * Updated several broken URL's
 * Updated several missing translation strings
 
-= 2.3.2 =
+= 2.3.2 (2015.08.02) =
 * Added Swedish translation
 * Updated readme file
 
-= 2.3.1 =
+= 2.3.1 (2015.07.09) =
 * Added Russian translation
 * Updated readme file
 
-= 2.3 =
+= 2.3 (2015.07.04) =
 * Updated several Dev4Press links
 * Fixed XSS and LFI security issues with unsanitized input
 * Fixed order of displayed attachments to match upload order
 * Fixed inline image alignment when there is no image caption
 
-= 2.2 =
+= 2.2 (2015.03.06) =
 * Fixed problem with uploading video or audio files in some cases
 
 = 2.1 =

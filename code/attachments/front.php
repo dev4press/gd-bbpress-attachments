@@ -90,7 +90,7 @@ class gdbbAtt_Front {
         $this->save_reply(0, $topic_id, $forum_id, $anonymous_data, $topic_author);
     }
 
-    public function save_reply($reply_id, $topic_id, $forum_id, $anonymous_data, $reply_author) {
+    public function save_reply($reply_id, $topic_id, $forum_id, $anonymous_data = null, $reply_author = null) {
         $uploads = array();
 
         if (!empty($_FILES) && !empty($_FILES['d4p_attachment'])) {
