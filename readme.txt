@@ -1,11 +1,11 @@
 === GD bbPress Attachments ===
 Contributors: GDragoN
 Donate link: https://plugins.dev4press.com/gd-bbpress-attachments/
-Version: 3.0.1
+Version: 3.1
 Tags: dev4press, bbpress, attachments, upload, media library, forum, topic, reply, limit, meta
-Requires at least: 4.4
-Requires PHP: 5.5
-Tested up to: 4.9
+Requires at least: 4.6
+Requires PHP: 5.6
+Tested up to: 5.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,7 +25,7 @@ GD bbPress Attachments is an easy to use plugin for WordPress and bbPress for im
 * Control thumbnail size.
 * Control thumbnail CLASS and REL attributes.
 * Upload errors can be logged .
-* Post uthor and administrators can see errors.
+* Post author and administrators can see errors.
 * Administration: attachments count for topics and replies.
 * Administration: metabox for settings override for forums.
 * Administration: metabox with attachments list and errors for topics and replies.
@@ -44,7 +44,7 @@ GD bbPress Attachments 3.0 is tested with BuddyPress 3.0 using bbPress for Group
 Pro version contains many more great features:
 
 * Enhanced attachments features
-* Limit file types attachments uplod
+* Limit file types attachments upload
 * BBCodes editor toolbar
 * Report topics and replies
 * Say thanks to forum members
@@ -79,10 +79,10 @@ With more features on the roadmap exclusively for Pro version.
 
 == Installation ==
 = General Requirements =
-* PHP: 5.5 or newer
+* PHP: 5.6 or newer
 
 = WordPress Requirements =
-* WordPress: 4.4 or newer
+* WordPress: 4.6 or newer
 
 = bbPress Requirements =
 * bbPress Plugin: 2.5 or newer
@@ -125,10 +125,13 @@ Another common issue is that WordPress Media Library upload is not working. If t
 * Italian
 
 == Upgrade Notice ==
-= 3.0 =
-New plugin interface. New Images and Advanced settings panels. Various other updates and improvements.
+= 3.1 =
+Few minor updates and improvements.
 
 == Changelog ==
+= 3.1 (2019.03.15) =
+* Few minor updates and improvements
+
 = 3.0.1 (2018.10.05) =
 * Fixed problem with attachments save reply method passed arguments
 
