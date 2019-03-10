@@ -39,6 +39,7 @@ GD bbPress Attachments 3.0 is tested with BuddyPress 3.0 using bbPress for Group
 = More free Dev4Press plugins for bbPress =
 * [GD bbPress Tools](https://wordpress.org/plugins/gd-bbpress-tools/) - various expansion tools for forums
 * [GD Topic Polls](https://wordpress.org/plugins/gd-topic-polls/) - add polls to the bbPress topics
+* [GD Power Search](https://wordpress.org/plugins/gd-power-search-for-bbpress/) - add advanced search to the bbPress topics
 
 = Upgrade to GD bbPress Toolbox Pro =
 Pro version contains many more great features:
@@ -73,7 +74,8 @@ With more features on the roadmap exclusively for Pro version.
 
 = Premium dev4Press.com plugins for bbPress =
 * [GD bbPress Toolbox Pro](https://plugins.dev4press.com/gd-bbpress-toolbox/) - collection of features for bbPress
-* [GD Power Search Pro](https://plugins.dev4press.com/gd-power-search-for-bbpress/) - advanced search for bbPress
+* [GD Quantum Theme Pro](https://plugins.dev4press.com/gd-quantum-theme-for-bbpress/) - add new theme package to bbPress
+* [GD Power Search Pro](https://plugins.dev4press.com/gd-power-search-for-bbpress/) - add advanced search to the bbPress topics
 * [GD Topic Polls Pro](https://plugins.dev4press.com/gd-topic-polls/) - add polls to the bbPress topics
 * [GD Topic Prefix Pro](https://plugins.dev4press.com/gd-topic-prefix/) - add customizable bbPress topic prefixes
 
@@ -129,7 +131,7 @@ Another common issue is that WordPress Media Library upload is not working. If t
 Few minor updates and improvements.
 
 == Changelog ==
-= 3.1 (2019.03.15) =
+= 3.1 (2019.03.11) =
 * Few minor updates and improvements
 
 = 3.0.1 (2018.10.05) =
