@@ -1,12 +1,14 @@
 <?php
 
-if (!defined('ABSPATH')) exit;
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-class gdbbPressAttachments_Defaults {
+class GDATTDefaults {
     var $default_options = array(
-        'version' => '3.2',
-        'date' => '2019.09.02.',
-        'build' => 2320,
+        'version' => '3.3',
+        'date' => '2020.05.08.',
+        'build' => 2360,
         'status' => 'Stable',
         'product_id' => 'gd-bbpress-attachments',
         'edition' => 'free',
@@ -15,8 +17,6 @@ class gdbbPressAttachments_Defaults {
         'grid_reply_counter' => 1,
         'delete_attachments' => 'detach',
         'include_always' => 1,
-        'include_js' => 1,
-        'include_css' => 1,
         'hide_from_visitors' => 1,
         'max_file_size' => 512,
         'max_to_upload' => 4,
@@ -39,7 +39,8 @@ class gdbbPressAttachments_Defaults {
         'delete_visible_to_author' => 'no'
     );
 
-    function __construct() { }
+    function __construct() {
+    }
 }
 
 $d4p_upload_error_messages = array(

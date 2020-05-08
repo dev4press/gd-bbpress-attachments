@@ -1,22 +1,24 @@
 <?php
 
-if (!defined('ABSPATH')) exit;
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-class gdbbAtt_Front {
+class GDATTFront {
     private $icons = array(
-        'code' => 'c|cc|h|js|class', 
-        'xml' => 'xml', 
-        'excel' => 'xla|xls|xlsx|xlt|xlw|xlam|xlsb|xlsm|xltm', 
-        'word' => 'docx|dotx|docm|dotm', 
-        'image' => 'png|gif|jpg|jpeg|jpe|jp|bmp|tif|tiff|svg', 
-        'psd' => 'psd', 
-        'ai' => 'ai', 
+        'code' => 'c|cc|h|js|class',
+        'xml' => 'xml',
+        'excel' => 'xla|xls|xlsx|xlt|xlw|xlam|xlsb|xlsm|xltm',
+        'word' => 'docx|dotx|docm|dotm',
+        'image' => 'png|gif|jpg|jpeg|jpe|jp|bmp|tif|tiff|svg',
+        'psd' => 'psd',
+        'ai' => 'ai',
         'archive' => 'zip|rar|gz|gzip|tar',
-        'text' => 'txt|asc|nfo', 
-        'powerpoint' => 'pot|pps|ppt|pptx|ppam|pptm|sldm|ppsm|potm', 
-        'pdf' => 'pdf', 
-        'html' => 'htm|html|css', 
-        'video' => 'avi|asf|asx|wax|wmv|wmx|divx|flv|mov|qt|mpeg|mpg|mpe|mp4|m4v|ogv|mkv', 
+        'text' => 'txt|asc|nfo',
+        'powerpoint' => 'pot|pps|ppt|pptx|ppam|pptm|sldm|ppsm|potm',
+        'pdf' => 'pdf',
+        'html' => 'htm|html|css',
+        'video' => 'avi|asf|asx|wax|wmv|wmx|divx|flv|mov|qt|mpeg|mpg|mpe|mp4|m4v|ogv|mkv',
         'documents' => 'odt|odp|ods|odg|odc|odb|odf|wp|wpd|rtf',
         'audio' => 'mp3|m4a|m4b|mp4|m4v|wav|ra|ram|ogg|oga|mid|midi|wma|mka',
         'icon' => 'ico'
@@ -26,8 +28,17 @@ class gdbbAtt_Front {
         add_action('bbp_init', array($this, 'load'));
     }
 
+    public static function instance() {
+        static $instance = false;
+
+        if ($instance === false) {
+            $instance = new GDATTFront();
+        }
+
+        return $instance;
+    }
+
     public function load() {
-        add_action('bbp_head', array($this, 'bbp_head'));
         add_action('wp_enqueue_scripts', array($this, 'wp_enqueue_scripts'));
 
         add_action('bbp_theme_before_reply_form_submit_wrapper', array($this, 'embed_form'));
@@ -44,6 +55,8 @@ class gdbbAtt_Front {
         if (d4p_bba_o('attachment_icon') == 1) {
             add_action('bbp_theme_before_topic_title', array($this, 'show_attachments_icon'));
         }
+
+        $this->register_scripts_and_styles();
     }
 
     private function icon($ext) {
@@ -58,31 +71,27 @@ class gdbbAtt_Front {
         return 'generic';
     }
 
-    public function wp_enqueue_scripts() {
-        if (d4p_bba_o('include_always') == 1 || d4p_is_bbpress()) {
-            if (d4p_bba_o('include_css') == 1) {
-                wp_enqueue_style('d4p-bbattachments-css', GDBBPRESSATTACHMENTS_URL.'css/front.css', array(), GDBBPRESSATTACHMENTS_VERSION);
-            }
+    public function register_scripts_and_styles() {
+        $debug = defined('SCRIPT_DEBUG') ? SCRIPT_DEBUG : false;
+        $files = 'front'.($debug ? '' : '.min');
 
-            if (d4p_bba_o('include_js') == 1) {
-                wp_enqueue_script('jquery');
-                wp_enqueue_script('d4p-bbattachments-js', GDBBPRESSATTACHMENTS_URL.'js/front.js', array('jquery'), GDBBPRESSATTACHMENTS_VERSION, true);
-            }
-        }
+        wp_register_style('gdatt-attachments', GDBBPRESSATTACHMENTS_URL.'css/'.$files.'.css', array(), GDBBPRESSATTACHMENTS_VERSION);
+        wp_register_script('gdatt-attachments', GDBBPRESSATTACHMENTS_URL.'js/'.$files.'.js', array('jquery'), GDBBPRESSATTACHMENTS_VERSION, true);
     }
 
-    public function bbp_head() { 
+    public function include_scripts_and_styles() {
+        wp_enqueue_style('gdatt-attachments');
+        wp_enqueue_script('gdatt-attachments');
+
+        wp_localize_script('gdatt-attachments', 'gdbbPressAttachmentsInit', array(
+            'max_files' => apply_filters('d4p_bbpressattchment_allow_upload', GDATTCore::instance()->get_max_files(), bbp_get_forum_id()),
+            'are_you_sure' => __("This operation is not reversible. Are you sure?")
+        ));
+    }
+
+    public function wp_enqueue_scripts() {
         if (d4p_bba_o('include_always') == 1 || d4p_is_bbpress()) {
-            global $gdbbpress_attachments;
-
-        ?><script type="text/javascript">
-            /* <![CDATA[ */
-            var gdbbPressAttachmentsInit = {
-                max_files: <?php echo apply_filters('d4p_bbpressattchment_allow_upload', $gdbbpress_attachments->get_max_files(), bbp_get_forum_id()); ?>
-            };
-            /* ]]> */
-        </script><?php
-
+            $this->include_scripts_and_styles();
         }
     }
 
@@ -94,7 +103,6 @@ class gdbbAtt_Front {
         $uploads = array();
 
         if (!empty($_FILES) && !empty($_FILES['d4p_attachment'])) {
-            global $gdbbpress_attachments;
 
             require_once(ABSPATH.'wp-admin/includes/file.php');
 
@@ -114,7 +122,7 @@ class gdbbAtt_Front {
 
                     $file_name = sanitize_file_name($file_name);
 
-                    if ($gdbbpress_attachments->is_right_size($file, $forum_id)) {
+                    if (GDATTCore::instance()->is_right_size($file, $forum_id)) {
                         $upload = wp_handle_upload($file, $overrides);
 
                         if (!is_wp_error($upload)) {
@@ -161,7 +169,7 @@ class gdbbAtt_Front {
                 foreach ($errs as $error) {
                     if ($error[0] != '' && $error[1] != '') {
                         add_post_meta($post_id, '_bbp_attachment_upload_error', array(
-                            'code' => $code, 'file' => $error[1], 'message' => $error[0])
+                                'code' => $code, 'file' => $error[1], 'message' => $error[0])
                         );
                     }
                 }
@@ -173,10 +181,10 @@ class gdbbAtt_Front {
             require_once(ABSPATH.'wp-admin/includes/image.php');
 
             foreach ($uploads as $upload) {
-                $wp_filetype = wp_check_filetype(basename($upload['file']), null );
+                $wp_filetype = wp_check_filetype(basename($upload['file']), null);
                 $attachment = array('post_mime_type' => $wp_filetype['type'],
                     'post_title' => preg_replace('/\.[^.]+$/', '', basename($upload['file'])),
-                    'post_content' => '','post_status' => 'inherit'
+                    'post_content' => '', 'post_status' => 'inherit'
                 );
 
                 $attach_id = wp_insert_attachment($attachment, $upload['file'], $post_id);
@@ -197,29 +205,30 @@ class gdbbAtt_Front {
     }
 
     public function embed_attachments($content, $id) {
-        global $gdbbpress_attachments, $user_ID;
+        global $user_ID;
+
         $attachments = d4p_get_post_attachments($id);
 
         $post = get_post($id);
         $author_id = $post->post_author;
 
         if (!empty($attachments)) {
-            $content.= '<div class="bbp-attachments">';
-            $content.= '<h6>'.__("Attachments", "gd-bbpress-attachments").':</h6>';
+            $content .= '<div class="bbp-attachments">';
+            $content .= '<h6>'.__("Attachments", "gd-bbpress-attachments").':</h6>';
 
             $_download = ' download';
 
-            if (!is_user_logged_in() && $gdbbpress_attachments->is_hidden_from_visitors()) {
-                $content.= sprintf(__("You must be <a href='%s'>logged in</a> to view attached files.", "gd-bbpress-attachments"), wp_login_url(get_permalink()));
+            if (!is_user_logged_in() && GDATTCore::instance()->is_hidden_from_visitors()) {
+                $content .= sprintf(__("You must be <a href='%s'>logged in</a> to view attached files.", "gd-bbpress-attachments"), wp_login_url(get_permalink()));
             } else {
                 if (!empty($attachments)) {
                     $listing = '<ol';
 
                     if (d4p_bba_o("attchment_icons") == 1) {
-                        $listing.= ' class="with-icons"';
+                        $listing .= ' class="with-icons"';
                     }
 
-                    $listing.= '>';
+                    $listing .= '>';
                     $thumbnails = $listing;
                     $images = $files = 0;
 
@@ -240,15 +249,15 @@ class gdbbAtt_Front {
                         }
 
                         if ($allow == 'delete' || $allow == 'both') {
-                            $actions[] = '<a href="'.add_query_arg('d4pbbaction', 'delete', $url).'">'.__("delete", "gd-bbpress-attachments").'</a>';
+                            $actions[] = '<a class="d4p-bba-action-delete" href="'.add_query_arg('d4pbbaction', 'delete', $url).'">'.__("delete", "gd-bbpress-attachments").'</a>';
                         }
 
                         if ($allow == 'detach' || $allow == 'both') {
-                            $actions[] = '<a href="'.add_query_arg('d4pbbaction', 'detach', $url).'">'.__("detach", "gd-bbpress-attachments").'</a>';
+                            $actions[] = '<a class="d4p-bba-action-detach" href="'.add_query_arg('d4pbbaction', 'detach', $url).'">'.__("detach", "gd-bbpress-attachments").'</a>';
                         }
-                        
+
                         if (count($actions) > 0) {
-                            $actions = ' ['.join(' | ', $actions).']';
+                            $actions = ' <span class="d4p-bba-actions">['.join(' | ', $actions).']</span>';
                         } else {
                             $actions = '';
                         }
@@ -272,7 +281,7 @@ class gdbbAtt_Front {
                                 $class_li = 'bbp-atthumb';
 
                                 if (d4p_bba_o('image_thumbnail_inline') == 1) {
-                                    $class_li.= ' bbp-inline';
+                                    $class_li .= ' bbp-inline';
                                 }
 
                                 $class_a = d4p_bba_o('image_thumbnail_css');
@@ -295,63 +304,63 @@ class gdbbAtt_Front {
                         $item = '<li id="d4p-bbp-attachment_'.$attachment->ID.'" class="d4p-bbp-attachment d4p-bbp-attachment-'.$ext.' '.$class_li.'">';
 
                         if ($caption) {
-                            $item.= '<div style="width: '.d4p_bba_o("image_thumbnail_size_x").'px" class="wp-caption">';
+                            $item .= '<div style="width: '.d4p_bba_o("image_thumbnail_size_x").'px" class="wp-caption">';
                         }
 
                         if ($img) {
-                            $item.= '<a class="'.$class_a.'"'.$rel_a.' href="'.$file_url.'" title="'.$a_title.'">'.$html.'</a>';
+                            $item .= '<a class="'.$class_a.'"'.$rel_a.' href="'.$file_url.'" title="'.$a_title.'">'.$html.'</a>';
                         } else {
-                            $item.= '<a class="'.$class_a.'"'.$rel_a.$_download.' href="'.$file_url.'" title="'.$a_title.'">'.$html.'</a>';
+                            $item .= '<a class="'.$class_a.'"'.$rel_a.$_download.' href="'.$file_url.'" title="'.$a_title.'">'.$html.'</a>';
                         }
 
                         if ($caption) {
                             $a_title = '<a href="'.$file_url.'"'.$_download.'>'.$a_title.'</a>';
 
-                            $item.= '<p class="wp-caption-text">'.$a_title.'<br/>'.$actions.'</p></div>';
+                            $item .= '<p class="wp-caption-text">'.$a_title.'<br/>'.$actions.'</p></div>';
                         } else {
-                            $item.= $actions;
+                            $item .= $actions;
                         }
 
-                        $item.= '</li>';
+                        $item .= '</li>';
 
                         if ($img) {
-                            $thumbnails.= $item;
+                            $thumbnails .= $item;
                             $images++;
                         } else {
-                            $listing.= $item;
+                            $listing .= $item;
                             $files++;
                         }
                     }
 
-                    $thumbnails.= '</ol>';
-                    $listing.= '</ol>';
-                    
+                    $thumbnails .= '</ol>';
+                    $listing .= '</ol>';
+
                     if ($images > 0) {
-                        $content.= $thumbnails;
+                        $content .= $thumbnails;
                     }
 
                     if ($files > 0) {
-                        $content.= $listing;
+                        $content .= $listing;
                     }
                 }
             }
 
-            $content.= '</div>';
+            $content .= '</div>';
         }
 
         if ((d4p_bba_o('errors_visible_to_author') == 1 && $author_id == $user_ID) || (d4p_bba_o('errors_visible_to_admins') == 1 && d4p_is_user_admin()) || (d4p_bba_o('errors_visible_to_moderators') == 1 && d4p_is_user_moderator())) {
             $errors = get_post_meta($id, '_bbp_attachment_upload_error');
 
             if (!empty($errors)) {
-                $content.= '<div class="bbp-attachments-errors">';
-                $content.= '<h6>'.__("Upload Errors", "gd-bbpress-attachments").':</h6>';
-                $content.= '<ol>';
+                $content .= '<div class="bbp-attachments-errors">';
+                $content .= '<h6>'.__("Upload Errors", "gd-bbpress-attachments").':</h6>';
+                $content .= '<ol>';
 
                 foreach ($errors as $error) {
-                    $content.= '<li><strong>'.esc_html($error['file']).'</strong>: '.__($error['message'], "gd-bbpress-attachments").'</li>';
+                    $content .= '<li><strong>'.esc_html($error['file']).'</strong>: '.__($error['message'], "gd-bbpress-attachments").'</li>';
                 }
 
-                $content.= '</ol></div>';
+                $content .= '</ol></div>';
             }
         }
 
@@ -359,19 +368,18 @@ class gdbbAtt_Front {
     }
 
     public function embed_form() {
-        global $gdbbpress_attachments;
+        $can_upload = apply_filters('d4p_bbpressattchment_allow_upload', GDATTCore::instance()->is_user_allowed(), d4p_get_forum_id());
+        if (!$can_upload) {
+            return;
+        }
 
-        $can_upload = apply_filters('d4p_bbpressattchment_allow_upload', $gdbbpress_attachments->is_user_allowed(), bbp_get_forum_id());
-        if (!$can_upload) return;
+        $is_enabled = apply_filters('d4p_bbpressattchment_forum_enabled', GDATTCore::instance()->enabled_for_forum(), d4p_get_forum_id());
+        if (!$is_enabled) {
+            return;
+        }
 
-        $is_enabled = apply_filters('d4p_bbpressattchment_forum_enabled', $gdbbpress_attachments->enabled_for_forum(), bbp_get_forum_id());
-        if (!$is_enabled) return;
-
-        $file_size = apply_filters('d4p_bbpressattchment_max_file_size', $gdbbpress_attachments->get_file_size(), bbp_get_forum_id());
+        $file_size = apply_filters('d4p_bbpressattchment_max_file_size', GDATTCore::instance()->get_file_size(), d4p_get_forum_id());
 
         include(GDBBPRESSATTACHMENTS_PATH.'forms/uploader.php');
     }
 }
-
-global $gdbbpress_attachments_front;
-$gdbbpress_attachments_front = new gdbbAtt_Front();

@@ -81,24 +81,8 @@
 
         <fieldset>
             <h3><?php _e("JavaScript and CSS Settings", "gd-bbpress-attachments"); ?></h3>
-            <p><?php _e("You can disable including styles and JavaScript by the plugin, if you want to do it some other way.", "gd-bbpress-attachments"); ?></p>
-            <table class="form-table">
-                <tbody>
-                    <tr valign="top">
-                        <th scope="row"><label for="include_js"><?php _e("Include JavaScript", "gd-bbpress-attachments"); ?></label></th>
-                        <td>
-                            <input type="checkbox" <?php if ($options["include_js"] == 1) { echo " checked"; } ?> name="include_js" />
-                        </td>
-                    </tr>
-                    <tr valign="top">
-                        <th scope="row"><label for="include_css"><?php _e("Include CSS", "gd-bbpress-attachments"); ?></label></th>
-                        <td>
-                            <input type="checkbox" <?php if ($options["include_css"] == 1) { echo " checked"; } ?> name="include_css" />
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
             <p><?php _e("If you use shortcodes to embed forums, and you rely on plugin to add JS and CSS, you also need to enable this option to skip checking for bbPress specific pages.", "gd-bbpress-attachments"); ?></p>
+            <p><?php _e("Plugin will attempt to load files automatically when neede. If that fails, try using this option.", "gd-bbpress-attachments"); ?></p>
             <table class="form-table">
                 <tbody>
                     <tr valign="top">
@@ -109,7 +93,6 @@
                     </tr>
                 </tbody>
             </table>
-            <p><?php _e("Enable this option if you use BuddyPress with bbPress plugin for site wide forums.", "gd-bbpress-attachments"); ?></p>
         </fieldset>
 
         <fieldset>

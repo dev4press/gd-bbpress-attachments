@@ -1,8 +1,10 @@
 <?php
 
-if (!defined('ABSPATH')) exit;
+if (!defined('ABSPATH')) {
+    exit;
+}
 
-class gdbbPressAttachments {
+class GDATTCore {
     private $wp_version;
     private $plugin_path;
     private $plugin_url;
@@ -12,10 +14,10 @@ class gdbbPressAttachments {
 
     function __construct() {
         global $wp_version;
-        $this->wp_version = substr(str_replace('.', '', $wp_version), 0, 2);
-        define('GDBBPRESSATTACHMENTS_WPV', intval($this->wp_version));
 
-        $gdd = new gdbbPressAttachments_Defaults();
+        $this->wp_version = substr(str_replace('.', '', $wp_version), 0, 2);
+
+        $gdd = new GDATTDefaults();
 
         $this->o = get_option('gd-bbpress-attachments');
         if (!is_array($this->o)) {
@@ -39,7 +41,7 @@ class gdbbPressAttachments {
         define('GDBBPRESSATTACHMENTS_INSTALLED', $gdd->default_options['version'].' Free');
         define('GDBBPRESSATTACHMENTS_VERSION', $gdd->default_options['version'].'_b'.($gdd->default_options['build'].'_free'));
 
-        $this->plugin_path = dirname(dirname(dirname(__FILE__))).'/';
+        $this->plugin_path = dirname(dirname(__FILE__)).'/';
         $this->plugin_url = plugins_url('/gd-bbpress-attachments/');
 
         define('GDBBPRESSATTACHMENTS_URL', $this->plugin_url);
@@ -48,14 +50,28 @@ class gdbbPressAttachments {
         add_action('after_setup_theme', array($this, 'load'), 5);
     }
 
-    private function _upgrade($old, $new) {
-        foreach ($new as $key => $value) {
-            if (!isset($old[$key])) $old[$key] = $value;
+    public static function instance() {
+        static $instance = false;
+
+        if ($instance === false) {
+            $instance = new GDATTCore();
         }
 
-        $unset = Array();
+        return $instance;
+    }
+
+    private function _upgrade($old, $new) {
+        foreach ($new as $key => $value) {
+            if (!isset($old[$key])) {
+                $old[$key] = $value;
+            }
+        }
+
+        $unset = array();
         foreach ($old as $key => $value) {
-            if (!isset($new[$key])) $unset[] = $key;
+            if (!isset($new[$key])) {
+                $unset[] = $key;
+            }
         }
 
         foreach ($unset as $key) {
@@ -66,6 +82,8 @@ class gdbbPressAttachments {
     }
 
     public function load() {
+        load_plugin_textdomain('gd-bbpress-attachments', false, 'gd-bbpress-attachments/languages');
+
         add_action('init', array($this, 'init_thumbnail_size'), 1);
         add_action('init', array($this, 'delete_attachments'));
 
@@ -73,11 +91,15 @@ class gdbbPressAttachments {
 
         if (is_admin()) {
             require_once(GDBBPRESSATTACHMENTS_PATH.'code/admin.php');
-        } else {
-            require_once(GDBBPRESSATTACHMENTS_PATH.'code/attachments/front.php');
-        }
+            require_once(GDBBPRESSATTACHMENTS_PATH.'code/meta.php');
 
-	    load_plugin_textdomain('gd-bbpress-attachments', false, 'gd-bbpress-attachments/languages');
+            GDATTAdmin::instance();
+            GDATTAdminMeta::instance();
+        } else {
+            require_once(GDBBPRESSATTACHMENTS_PATH.'code/front.php');
+
+            GDATTFront::instance();
+        }
     }
 
     public function init_thumbnail_size() {
@@ -114,7 +136,9 @@ class gdbbPressAttachments {
                     wp_delete_attachment($att_id);
 
                     add_post_meta($bbp_id, '_bbp_attachment_log', array(
-                        'code' => 'delete_attachment', 'user' => $user_ID, 'file' => $file)
+                        'code' => 'delete_attachment',
+                        'user' => $user_ID,
+                        'file' => $file)
                     );
                 }
 
@@ -123,7 +147,9 @@ class gdbbPressAttachments {
                     $wpdb->update($wpdb->posts, array('post_parent' => 0), array('ID' => $att_id));
 
                     add_post_meta($bbp_id, '_bbp_attachment_log', array(
-                        'code' => 'detach_attachment', 'user' => $user_ID, 'file' => $file)
+                        'code' => 'detach_attachment',
+                        'user' => $user_ID,
+                        'file' => $file)
                     );
                 }
             }
@@ -193,6 +219,7 @@ class gdbbPressAttachments {
         $forum_id = $forum_id == 0 ? bbp_get_forum_id() : $forum_id;
 
         $file_size = apply_filters('d4p_bbpressattchment_max_file_size', $this->get_file_size(false, $forum_id), $forum_id);
+
         return $file["size"] < $file_size * 1024;
     }
 
@@ -232,6 +259,3 @@ class gdbbPressAttachments {
         return apply_filters('d4p_bbpressattchment_is_hidden_from_visitors', $value == 1);
     }
 }
-
-global $gdbbpress_attachments;
-$gdbbpress_attachments = new gdbbPressAttachments();

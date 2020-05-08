@@ -3,6 +3,8 @@
         <h3><?php _e("Premium Plugins for bbPress", "gd-bbpress-attachments"); ?></h3>
         <a target="_blank" href="https://plugins.dev4press.com/gd-bbpress-toolbox/">GD bbPress Toolbox Pro</a><br/>
         <a target="_blank" href="https://plugins.dev4press.com/gd-quantum-theme-for-bbpress/">GD Quantum Theme Pro</a><br/>
+        <a target="_blank" href="https://plugins.dev4press.com/gd-members-directory-for-bbpress/">GD Members Directory Pro</a><br/>
+        <a target="_blank" href="https://plugins.dev4press.com/gd-forum-notices-for-bbpress/">GD Forum Notices Pro</a><br/>
         <a target="_blank" href="https://plugins.dev4press.com/gd-power-search-for-bbpress/">GD Power Search Pro</a><br/>
         <a target="_blank" href="https://plugins.dev4press.com/gd-topic-prefix/">GD Topic Prefix Pro</a><br/>
         <a target="_blank" href="https://plugins.dev4press.com/gd-topic-polls/">GD Topic Polls Pro</a><br/>
@@ -51,5 +53,5 @@
 <div class="d4p-clear"></div>
 
 <div class="d4p-copyright">
-    Dev4Press &copy; 2008 - 2018 <a target="_blank" href="https://www.dev4press.com">www.dev4press.com</a> | Golden Dragon WebStudio <a target="_blank" href="https://www.gdragon.info">www.gdragon.info</a>
+    Dev4Press &copy; 2008 - 2020 <a target="_blank" href="https://www.dev4press.com">www.dev4press.com</a> | Golden Dragon WebStudio <a target="_blank" href="https://www.gdragon.info">www.gdragon.info</a>
 </div>
