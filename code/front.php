@@ -85,7 +85,7 @@ class GDATTFront {
 
         wp_localize_script('gdatt-attachments', 'gdbbPressAttachmentsInit', array(
             'max_files' => apply_filters('d4p_bbpressattchment_allow_upload', GDATTCore::instance()->get_max_files(), bbp_get_forum_id()),
-            'are_you_sure' => __("This operation is not reversible. Are you sure?")
+            'are_you_sure' => __("This operation is not reversible. Are you sure?", "gd-bbpress-attachments")
         ));
     }
 
@@ -354,10 +354,18 @@ class GDATTFront {
             if (!empty($errors)) {
                 $content .= '<div class="bbp-attachments-errors">';
                 $content .= '<h6>'.__("Upload Errors", "gd-bbpress-attachments").':</h6>';
-                $content .= '<ol>';
+                $content .= '<ol';
+
+                $class_li = 'bbp-file-error';
+                if (d4p_bba_o("attchment_icons") == 1) {
+                    $content .= ' class="with-icons"';
+                    $class_li .= ' bbp-atticon bbp-atticon-error';
+                }
+
+                $content .= '>';
 
                 foreach ($errors as $error) {
-                    $content .= '<li><strong>'.esc_html($error['file']).'</strong>: '.__($error['message'], "gd-bbpress-attachments").'</li>';
+                    $content .= '<li class="'.$class_li.'"><strong>'.esc_html($error['file']).'</strong>: '.__($error['message'], "gd-bbpress-attachments").'</li>';
                 }
 
                 $content .= '</ol></div>';

@@ -1,5 +1,5 @@
 <fieldset class="bbp-form">
-    <legend><?php _e("Upload Attachments"); ?></legend>
+    <legend><?php _e("Upload Attachments", "gd-bbpress-attachments"); ?></legend>
     <div class="bbp-template-notice">
         <p><?php
 
@@ -7,7 +7,7 @@
 
             printf(__("Maximum file size allowed is %s.", "gd-bbpress-attachments"), $size);
 
-        ?></p>
+            ?></p>
     </div>
     <p class="bbp-attachments-form">
         <label for="bbp_topic_tags">

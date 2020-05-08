@@ -1,7 +1,9 @@
 <div class="d4p-bbpress-toolbox">
     <fieldset class="the-top">
         <em><?php _e("consider upgrading to", "gd-bbpress-attachments"); ?></em>
-        <h3><a title="GD bbPress Toolbox Pro" target="_blank" href="<?php echo d4p_url_campaign_tracking('https://plugins.dev4press.com/gd-bbpress-toolbox/', 'gd-bbpress-attachments-to-pro', 'wordpress', 'free-plugin-admin'); ?>">GD bbPress Toolbox Pro</a></h3>
+        <h3>
+            <a title="GD bbPress Toolbox Pro" target="_blank" href="<?php echo d4p_url_campaign_tracking('https://plugins.dev4press.com/gd-bbpress-toolbox/', 'gd-bbpress-attachments-to-pro', 'wordpress', 'free-plugin-admin'); ?>">GD bbPress Toolbox Pro</a>
+        </h3>
         <p style="font-weight: bold; font-size: 15px;"><?php _e("Enhancing WordPress forums powered by bbPress", "gd-bbpress-attachments"); ?></p>
         <p><?php _e("Expand bbPress powered forums with attachments upload, BBCodes, signatures, widgets, quotes, topics report, thanks, activity tracking, enhanced widgets, extra views...", "gd-bbpress-attachments"); ?></p>
 

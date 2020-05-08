@@ -16,13 +16,13 @@
                 e.preventDefault();
 
                 var now = $(".bbp-attachments-form input[type=file]").length,
-                    max = gdbbPressAttachmentsInit.max_files;
+                    max = parseInt(gdbbPressAttachmentsInit.max_files);
 
                 if (now < max) {
                     $(this).before('<input type="file" size="40" name="d4p_attachment[]"><br/>');
                 }
 
-                if (now + 1 === max) {
+                if (now + 1 >= max) {
                     $(this).remove();
                 }
             });

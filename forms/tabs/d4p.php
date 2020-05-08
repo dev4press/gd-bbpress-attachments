@@ -40,7 +40,7 @@
     </fieldset>
 
     <fieldset>
-    <h3><?php _e("More Free Plugins", "gd-bbpress-attachments"); ?></h3>
+        <h3><?php _e("More Free Plugins", "gd-bbpress-attachments"); ?></h3>
         <a target="_blank" href="https://wordpress.org/plugins/gd-rating-system/">GD Rating System</a><br/>
         <a target="_blank" href="https://wordpress.org/plugins/gd-pages-navigator/">GD Pages Navigator</a><br/>
         <a target="_blank" href="https://wordpress.org/plugins/gd-linkedin-badge/">GD LinkedIn Badge</a>
@@ -53,5 +53,7 @@
 <div class="d4p-clear"></div>
 
 <div class="d4p-copyright">
-    Dev4Press &copy; 2008 - 2020 <a target="_blank" href="https://www.dev4press.com">www.dev4press.com</a> | Golden Dragon WebStudio <a target="_blank" href="https://www.gdragon.info">www.gdragon.info</a>
+    Dev4Press &copy; 2008 - 2020
+    <a target="_blank" href="https://www.dev4press.com">www.dev4press.com</a> | Golden Dragon WebStudio
+    <a target="_blank" href="https://www.gdragon.info">www.gdragon.info</a>
 </div>

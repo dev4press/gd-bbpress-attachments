@@ -6,9 +6,9 @@ if (!defined('ABSPATH')) {
 
 class GDATTDefaults {
     var $default_options = array(
-        'version' => '3.3',
+        'version' => '4.0',
         'date' => '2020.05.08.',
-        'build' => 2360,
+        'build' => 2400,
         'status' => 'Stable',
         'product_id' => 'gd-bbpress-attachments',
         'edition' => 'free',

@@ -1,7 +1,7 @@
 === GD bbPress Attachments ===
 Contributors: GDragoN
 Donate link: https://plugins.dev4press.com/gd-bbpress-attachments/
-Version: 3.3
+Version: 4.0
 Tags: dev4press, bbpress, attachments, upload, media library, forum, topic, reply, limit, meta
 Requires at least: 4.9
 Requires PHP: 5.6
@@ -31,10 +31,10 @@ GD bbPress Attachments is an easy to use plugin for WordPress and bbPress for im
 * Administration: metabox with attachments list and errors for topics and replies.
 
 = bbPress Plugin Versions =
-GD bbPress Attachments 3.3 supports bbPress 2.5.12 or newer. Older bbPress are no longer supported!
+GD bbPress Attachments 4.0 supports bbPress 2.5.12 or newer. Older bbPress are no longer supported!
 
 = BuddyPress Support =
-GD bbPress Attachments 3.3 is tested with BuddyPress 5.0 using bbPress for Groups forums. Make sure you enable JavaScript and CSS Settings Always Include option in the plugin settings.
+GD bbPress Attachments 4.0 is tested with BuddyPress 5.0 using bbPress for Groups forums. Make sure you enable JavaScript and CSS Settings Always Include option in the plugin settings.
 
 = More free Dev4Press plugins for bbPress =
 * [GD bbPress Tools](https://wordpress.org/plugins/gd-bbpress-tools/) - various expansion tools for forums
@@ -114,19 +114,23 @@ In some cases, it can happen that jQuery is not included on the page, even so, t
 Another common issue is that WordPress Media Library upload is not working. If that is not set up, attachments upload can't work.
 
 == Upgrade Notice ==
-= 3.3 =
-Various updates, improvements and fixes.
+= 4.0 =
+Confirmation dialog for delete/detach. Various JS/CSS improvements. Many more updates and fixes.
 
 == Changelog ==
-= 3.3 (2020.05.08) =
+= 4.0 (2020.05.08) =
 * New fieldset used to wrap attachments upload control
 * New replacement function to determine valid forum id
 * New confirmation dialog for deleting and detaching files
 * New reorganized plugin code and the way it is loaded and run
-* New rewritten loading of JavaScript and CSS files
 * New completely rewritten JavaScript for attachments handling
+* New rewritten loading of JavaScript and CSS files
 * New fully reorganized CSS now written using SCSS
+* New loading JavaScript and CSS minified or normal
+* New error icon added to the list of errors
+* Replaced icon for the attachment in the topics list
 * Removed obsolete form encoding attribute settings
+* Fixed issue with the topic and reply edit pages
 
 = 3.2 (2019.09.02) =
 * Show KB or MB file size limit depending on the size
