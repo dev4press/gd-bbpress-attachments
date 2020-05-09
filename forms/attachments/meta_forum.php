@@ -27,7 +27,7 @@
     <span class="description"><?php _e("at once", "gd-bbpress-attachments"); ?></span>
 </p>
 <p>
-    <strong class="label" style="width: 160px;"><?php _e("Hide list of attachements", "gd-bbpress-attachments"); ?>:</strong>
+    <strong class="label" style="width: 160px;"><?php _e("Hide list of attachments", "gd-bbpress-attachments"); ?>:</strong>
     <label for="gdbbatt_hide_from_visitors" class="screen-reader-text"><?php _e("Hide From Visitors", "gd-bbpress-attachments"); ?>:</label>
     <br/><input style="vertical-align: top; margin-top: 3px;" type="checkbox" <?php if ($meta["hide_from_visitors"] == 1) {
         echo " checked";

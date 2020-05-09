@@ -9,7 +9,7 @@
     <div class="d4p-settings">
         <fieldset>
             <h3><?php _e("Global Attachments Settings", "gd-bbpress-attachments"); ?></h3>
-            <p><?php _e("These settings can be overriden for individual forums.", "gd-bbpress-attachments"); ?></p>
+            <p><?php _e("These settings can be overridden for individual forums.", "gd-bbpress-attachments"); ?></p>
             <table class="form-table">
                 <tbody>
                 <tr valign="top">
@@ -32,7 +32,7 @@
                 </tr>
                 <tr valign="top">
                     <th scope="row">
-                        <label for="hide_from_visitors"><?php _e("Hide attachements", "gd-bbpress-attachments"); ?></label>
+                        <label for="hide_from_visitors"><?php _e("Hide attachments", "gd-bbpress-attachments"); ?></label>
                     </th>
                     <td>
                         <input class="widefat" type="checkbox" <?php if ($options["hide_from_visitors"] == 1) {
@@ -99,7 +99,7 @@
         <fieldset>
             <h3><?php _e("JavaScript and CSS Settings", "gd-bbpress-attachments"); ?></h3>
             <p><?php _e("If you use shortcodes to embed forums, and you rely on plugin to add JS and CSS, you also need to enable this option to skip checking for bbPress specific pages.", "gd-bbpress-attachments"); ?></p>
-            <p><?php _e("Plugin will attempt to load files automatically when neede. If that fails, try using this option.", "gd-bbpress-attachments"); ?></p>
+            <p><?php _e("Plugin will attempt to load files automatically when needed. If that fails, try using this option.", "gd-bbpress-attachments"); ?></p>
             <table class="form-table">
                 <tbody>
                 <tr valign="top">
