@@ -46,6 +46,7 @@ Pro version contains many more great features:
 
 * Enhanced attachments features
 * Limit file types attachments upload
+* Add custom file types for upload
 * BBCodes editor toolbar
 * Report topics and replies
 * Say thanks to forum members
@@ -62,24 +63,16 @@ Pro version contains many more great features:
 * Forum based settings overrides
 * Improved BuddyPress support
 * 40 BBCodes (including Hide and Spoiler)
-* 19 Topics Views
-* 8 additional widgets
+* 19 more Topics Views
+* 9 additional widgets
 * Many great tweaks
 * And much, much more
 
 With more features on the roadmap exclusively for Pro version.
 
-* More information about [GD bbPress Toolbox Pro](https://plugins.dev4press.com/gd-bbpress-toolbox/)
-* Compare [Free vs. Pro Plugin](https://plugins.dev4press.com/gd-bbpress-toolbox/articles/toolbox-pro-vs-free-plugins/)
-
-= Premium dev4Press.com plugins for bbPress =
-* [GD bbPress Toolbox Pro](https://plugins.dev4press.com/gd-bbpress-toolbox/) - collection of features for bbPress
-* [GD Forum Notices Pro](https://plugins.dev4press.com/gd-forum-notices-for-bbpress/) - add customized notices to forums pages
-* [GD Members Directory Pro](https://plugins.dev4press.com/gd-members-directory-for-bbpress/) - add list of forum members
-* [GD Quantum Theme Pro](https://plugins.dev4press.com/gd-quantum-theme-for-bbpress/) - add new theme package to bbPress
-* [GD Power Search Pro](https://plugins.dev4press.com/gd-power-search-for-bbpress/) - add advanced search to the bbPress topics
-* [GD Topic Polls Pro](https://plugins.dev4press.com/gd-topic-polls/) - add polls to the bbPress topics
-* [GD Topic Prefix Pro](https://plugins.dev4press.com/gd-topic-prefix/) - add customizable bbPress topic prefixes
+* More information about [GD bbPress Toolbox Pro](https://plugins.dev4press.com/gd-bbpress-toolbox/?utm_source=wporg&utm_medium=link&utm_campaign=gd-bbpress-attachments)
+* Compare [Free vs. Pro Plugin](https://plugins.dev4press.com/gd-bbpress-toolbox/articles/toolbox-pro-vs-free-plugins/?utm_source=wporg&utm_medium=link&utm_campaign=gd-bbpress-attachments)
+* More Premium plugins for bbPress [bbPress Plugins Club](https://bbpress.dev4press.com/?utm_source=wporg&utm_medium=link&utm_campaign=gd-bbpress-attachments)
 
 == Installation ==
 = General Requirements =
@@ -118,8 +111,9 @@ Another common issue is that WordPress Media Library upload is not working. If t
 Confirmation dialog for delete/detach. Various JS/CSS improvements. Many more updates and fixes.
 
 == Changelog ==
-= 4.0.1 (2020.05.11) =
-* Few minor updates to CSS code
+= 4.0.1 (2020.05.13) =
+* Improvements to the plugin readme file
+* Few minor updates to the frontend CSS code
 * Fixed few more typos
 
 = 4.0 (2020.05.08) =
