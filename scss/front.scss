@@ -49,15 +49,26 @@
         ol {
             &.with-icons {
                 li {
-                    padding: 0 0 0 20px;
+                    padding: 0;
                     list-style: none;
+                    line-height: 20px;
 
-                    &.bbp-atticon {
+                    .bbp-atticon {
                         background: transparent url(gfx/icons.png) no-repeat;
+                        display: block;
+                        width: 16px;
+                        height: 16px;
+                        float: left;
+                        margin: 2px 4px 0 0;
 
                         &.bbp-atticon-error {
                             background-position: 0 -288px;
                         }
+                    }
+
+                    .d4p-bbp-att-wrapper {
+                        display: block;
+                        padding: 0 0 0 20px;
                     }
                 }
             }
@@ -70,21 +81,20 @@
                 list-style: none;
 
                 li {
-                    padding: 0 0 0 20px;
+                    padding: 0;
                     list-style: none;
                 }
             }
 
             li {
-                line-height: 16px;
-                height: 16px;
+                line-height: 20px;
                 margin: 0 0 8px !important;
 
                 a {
                     text-decoration: none;
                 }
 
-                &.bbp-atthumb {
+                &.d4p-bbp-attachment {
                     padding: 0;
                     height: auto;
 
@@ -121,8 +131,13 @@
         ol {
             &.with-icons {
                 li {
-                    &.bbp-atticon {
+                    .bbp-atticon {
                         background: transparent url(gfx/icons.png) no-repeat;
+                        display: block;
+                        width: 16px;
+                        height: 16px;
+                        float: left;
+                        margin: 2px 4px 0 0;
 
                         &.bbp-atticon-ai {
                             background-position: 0 -128px;
@@ -191,6 +206,11 @@
                         &.bbp-atticon-xml {
                             background-position: 0 -48px;
                         }
+                    }
+
+                    .d4p-bbp-att-wrapper {
+                        display: block;
+                        padding: 0 0 0 20px;
                     }
                 }
             }

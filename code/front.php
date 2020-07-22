@@ -5,6 +5,7 @@ if (!defined('ABSPATH')) {
 }
 
 class GDATTFront {
+    private $edit_mode = false;
     private $icons = array(
         'code' => 'c|cc|h|js|class',
         'xml' => 'xml',
@@ -44,8 +45,8 @@ class GDATTFront {
         add_action('bbp_theme_before_reply_form_submit_wrapper', array($this, 'embed_form'));
         add_action('bbp_theme_before_topic_form_submit_wrapper', array($this, 'embed_form'));
 
-        add_action('bbp_edit_reply', array($this, 'save_reply'), 10, 5);
-        add_action('bbp_edit_topic', array($this, 'save_topic'), 10, 4);
+        add_action('bbp_edit_reply', array($this, 'edit_reply'), 10, 5);
+        add_action('bbp_edit_topic', array($this, 'edit_topic'), 10, 4);
         add_action('bbp_new_reply', array($this, 'save_reply'), 10, 5);
         add_action('bbp_new_topic', array($this, 'save_topic'), 10, 4);
 
@@ -95,15 +96,31 @@ class GDATTFront {
         }
     }
 
+    public function edit_topic($topic_id, $forum_id, $anonymous_data, $topic_author) {
+        $this->edit_mode = true;
+        $this->process_attachments(0, $topic_id, $forum_id, $anonymous_data, $topic_author);
+    }
+
+    public function edit_reply($reply_id, $topic_id, $forum_id, $anonymous_data = null, $reply_author = null) {
+        $this->edit_mode = true;
+        $this->process_attachments($reply_id, $topic_id, $forum_id, $anonymous_data, $reply_author);
+    }
+
     public function save_topic($topic_id, $forum_id, $anonymous_data, $topic_author) {
-        $this->save_reply(0, $topic_id, $forum_id, $anonymous_data, $topic_author);
+        $this->edit_mode = false;
+        $this->process_attachments(0, $topic_id, $forum_id, $anonymous_data, $topic_author);
     }
 
     public function save_reply($reply_id, $topic_id, $forum_id, $anonymous_data = null, $reply_author = null) {
+        $this->edit_mode = false;
+        $this->process_attachments($reply_id, $topic_id, $forum_id, $anonymous_data, $reply_author);
+    }
+
+    public function process_attachments($reply_id, $topic_id, $forum_id, $anonymous_data = null, $reply_author = null) {
         $uploads = array();
+        $revision = false;
 
         if (!empty($_FILES) && !empty($_FILES['d4p_attachment'])) {
-
             require_once(ABSPATH.'wp-admin/includes/file.php');
 
             $errors = new gdbbp_Error();
@@ -174,6 +191,8 @@ class GDATTFront {
                     }
                 }
             }
+
+            $revision = true;
         }
 
         if (!empty($uploads)) {
@@ -189,10 +208,23 @@ class GDATTFront {
 
                 $attach_id = wp_insert_attachment($attachment, $upload['file'], $post_id);
                 $attach_data = wp_generate_attachment_metadata($attach_id, $upload['file']);
+
                 wp_update_attachment_metadata($attach_id, $attach_data);
                 update_post_meta($attach_id, '_bbp_attachment', '1');
             }
+
+            $revision = true;
         }
+
+        if ($this->edit_mode && $revision) {
+            add_filter('wp_save_post_revision_post_has_changed', array($this, 'post_has_changed'));
+        }
+    }
+
+    public function post_has_changed() {
+        remove_filter('wp_save_post_revision_post_has_changed', array($this, 'post_has_changed'));
+
+        return true;
     }
 
     public function show_attachments_icon() {
@@ -223,13 +255,18 @@ class GDATTFront {
             } else {
                 if (!empty($attachments)) {
                     $listing = '<ol';
+                    $thumbnails = '<ol';
 
                     if (d4p_bba_o("attchment_icons") == 1) {
-                        $listing .= ' class="with-icons"';
+                        $listing .= ' class="with-icons d4p-bbp-listing"';
+                        $thumbnails .= ' class="with-icons d4p-bba-thumbnails"';
+                    } else {
+                        $listing .= ' class="d4p-bbp-listing"';
+                        $thumbnails .= ' class="d4p-bba-thumbnails"';
                     }
 
                     $listing .= '>';
-                    $thumbnails = $listing;
+                    $thumbnails .= '>';
                     $images = $files = 0;
 
                     foreach ($attachments as $attachment) {
@@ -275,7 +312,7 @@ class GDATTFront {
                         if (d4p_bba_o('image_thumbnail_active') == 1) {
                             $html = wp_get_attachment_image($attachment->ID, 'd4p-bbp-thumb');
 
-                            if ($html != "") {
+                            if ($html != '') {
                                 $img = true;
 
                                 $class_li = 'bbp-atthumb';
@@ -293,6 +330,8 @@ class GDATTFront {
                             }
                         }
 
+                        $item = '<li id="d4p-bbp-attachment_'.$attachment->ID.'" class="d4p-bbp-attachment d4p-bbp-attachment-'.$ext.' '.$class_li.'">';
+
                         if ($html == '') {
                             $html = $filename;
 
@@ -301,24 +340,21 @@ class GDATTFront {
                             }
                         }
 
-                        $item = '<li id="d4p-bbp-attachment_'.$attachment->ID.'" class="d4p-bbp-attachment d4p-bbp-attachment-'.$ext.' '.$class_li.'">';
-
-                        if ($caption) {
-                            $item .= '<div style="width: '.d4p_bba_o("image_thumbnail_size_x").'px" class="wp-caption">';
-                        }
-
                         if ($img) {
+                            if ($caption) {
+                                $item .= '<div style="width: '.d4p_bba_o("image_thumbnail_size_x").'px" class="wp-caption">';
+                            }
+
                             $item .= '<a class="'.$class_a.'"'.$rel_a.' href="'.$file_url.'" title="'.$a_title.'">'.$html.'</a>';
-                        } else {
-                            $item .= '<a class="'.$class_a.'"'.$rel_a.$_download.' href="'.$file_url.'" title="'.$a_title.'">'.$html.'</a>';
-                        }
 
-                        if ($caption) {
-                            $a_title = '<a href="'.$file_url.'"'.$_download.'>'.$a_title.'</a>';
+                            if ($caption) {
+                                $a_title = '<a href="'.$file_url.'"'.$_download.'>'.$a_title.'</a>';
 
-                            $item .= '<p class="wp-caption-text">'.$a_title.'<br/>'.$actions.'</p></div>';
+                                $item .= '<p class="wp-caption-text">'.$a_title.'<br/>'.$actions.'</p></div>';
+                            }
                         } else {
-                            $item .= $actions;
+                            $item .= '<span role="presentation" class="'.$class_li.'"></span> ';
+                            $item .= '<div class="d4p-bbp-att-wrapper"><a class="'.$class_a.'"'.$rel_a.$_download.' href="'.$file_url.'" title="'.$a_title.'">'.$html.'</a>'.$actions.'</div>';
                         }
 
                         $item .= '</li>';
@@ -365,7 +401,8 @@ class GDATTFront {
                 $content .= '>';
 
                 foreach ($errors as $error) {
-                    $content .= '<li class="'.$class_li.'"><strong>'.esc_html($error['file']).'</strong>: '.__($error['message'], "gd-bbpress-attachments").'</li>';
+                    $content .= '<li class="'.$class_li.'"><span role="presentation" class="'.$class_li.'"></span> ';
+                    $content .= '<div class="d4p-bbp-att-wrapper"><strong>'.esc_html($error['file']).'</strong>: '.__($error['message'], "gd-bbpress-attachments").'</div></li>';
                 }
 
                 $content .= '</ol></div>';
