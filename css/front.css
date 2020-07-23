@@ -3,7 +3,6 @@
   border-top: 1px solid #dddddd;
   margin-top: 10px;
   padding: 10px 0;
-  overflow: auto;
 }
 
 #bbpress-forums .bbp-attachments h6,
@@ -17,7 +16,12 @@
 #bbpress-forums .bbp-attachments-errors ol {
   margin: 0 !important;
   list-style: decimal inside none;
-  overflow: auto;
+}
+#bbpress-forums .bbp-attachments ol:after,
+#bbpress-forums .bbp-attachments-errors ol:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 #bbpress-forums .bbp-attachments li:last-child,
 #bbpress-forums .bbp-attachments-errors li:last-child {
@@ -84,6 +88,8 @@
 }
 #bbpress-forums .bbp-attachments ol li.d4p-bbp-attachment .wp-caption p.wp-caption-text {
   margin: 5px 0 !important;
+  padding: 0;
+  border: 0;
   word-wrap: break-word;
   line-height: 1.3em;
 }
