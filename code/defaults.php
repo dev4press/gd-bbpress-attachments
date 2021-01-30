@@ -6,9 +6,9 @@ if (!defined('ABSPATH')) {
 
 class GDATTDefaults {
     var $default_options = array(
-        'version' => '4.1',
-        'date' => '2020.07.23.',
-        'build' => 2410,
+        'version' => '4.2',
+        'date' => '2021.01.30.',
+        'build' => 2420,
         'status' => 'Stable',
         'product_id' => 'gd-bbpress-attachments',
         'edition' => 'free',
@@ -22,7 +22,7 @@ class GDATTDefaults {
         'max_to_upload' => 4,
         'roles_to_upload' => null,
         'attachment_icon' => 1,
-        'attchment_icons' => 1,
+        'attachment_icons' => 1,
         'image_thumbnail_active' => 1,
         'image_thumbnail_inline' => 0,
         'image_thumbnail_caption' => 1,

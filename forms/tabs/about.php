@@ -23,11 +23,11 @@
         <?php
 
         _e("PHP: ", "gd-bbpress-attachments");
-        echo '<strong>5.6 or newer</strong><br/>';
+        echo '<strong>7.0 or newer</strong><br/>';
         _e("WordPress: ", "gd-bbpress-attachments");
-        echo '<strong>4.9 or newer</strong><br/>';
+        echo '<strong>5.0 or newer</strong><br/>';
         _e("bbPress: ", "gd-bbpress-attachments");
-        echo '<strong>2.5 or newer</strong>';
+        echo '<strong>2.6.2 or newer</strong>';
 
         ?>
     </fieldset>
@@ -48,7 +48,7 @@
 </div>
 <div class="d4p-clear"></div>
 <div class="d4p-copyright">
-    Dev4Press &copy; 2008 - 2020
+    Dev4Press &copy; 2008 - 2021
     <a target="_blank" href="https://www.dev4press.com/">www.dev4press.com</a> | Golden Dragon WebStudio
     <a target="_blank" href="https://www.gdragon.info">www.gdragon.info</a>
 </div>

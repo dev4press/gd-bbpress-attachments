@@ -133,12 +133,12 @@
                 </tr>
                 <tr valign="top">
                     <th scope="row">
-                        <label for="attchment_icons"><?php _e("File Type Icons", "gd-bbpress-attachments"); ?></label>
+                        <label for="attachment_icons"><?php _e("File Type Icons", "gd-bbpress-attachments"); ?></label>
                     </th>
                     <td>
-                        <input type="checkbox" <?php if ($options["attchment_icons"] == 1) {
+                        <input type="checkbox" <?php if ($options["attachment_icons"] == 1) {
                             echo " checked";
-                        } ?> name="attchment_icons"/>
+                        } ?> name="attachment_icons"/>
                     </td>
                 </tr>
                 </tbody>

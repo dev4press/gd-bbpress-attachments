@@ -253,132 +253,130 @@ class GDATTFront {
             if (!is_user_logged_in() && GDATTCore::instance()->is_hidden_from_visitors()) {
                 $content .= sprintf(__("You must be <a href='%s'>logged in</a> to view attached files.", "gd-bbpress-attachments"), wp_login_url(get_permalink()));
             } else {
-                if (!empty($attachments)) {
-                    $listing = '<ol';
-                    $thumbnails = '<ol';
+	            $listing = '<ol';
+	            $thumbnails = '<ol';
 
-                    if (d4p_bba_o("attchment_icons") == 1) {
-                        $listing .= ' class="with-icons d4p-bbp-listing"';
-                        $thumbnails .= ' class="with-icons d4p-bba-thumbnails"';
-                    } else {
-                        $listing .= ' class="d4p-bbp-listing"';
-                        $thumbnails .= ' class="d4p-bba-thumbnails"';
-                    }
+	            if (d4p_bba_o("attachment_icons") == 1) {
+		            $listing .= ' class="with-icons d4p-bbp-listing"';
+		            $thumbnails .= ' class="with-icons d4p-bba-thumbnails"';
+	            } else {
+		            $listing .= ' class="d4p-bbp-listing"';
+		            $thumbnails .= ' class="d4p-bba-thumbnails"';
+	            }
 
-                    $listing .= '>';
-                    $thumbnails .= '>';
-                    $images = $files = 0;
+	            $listing .= '>';
+	            $thumbnails .= '>';
+	            $images = $files = 0;
 
-                    foreach ($attachments as $attachment) {
-                        $actions = array();
+	            foreach ($attachments as $attachment) {
+		            $actions = array();
 
-                        $url = add_query_arg('_wpnonce', wp_create_nonce('d4p-bbpress-attachments'));
-                        $url = add_query_arg('att_id', $attachment->ID, $url);
-                        $url = add_query_arg('bbp_id', $id, $url);
+		            $url = add_query_arg('_wpnonce', wp_create_nonce('d4p-bbpress-attachments'));
+		            $url = add_query_arg('att_id', $attachment->ID, $url);
+		            $url = add_query_arg('bbp_id', $id, $url);
 
-                        $allow = 'no';
-                        if (d4p_is_user_admin()) {
-                            $allow = d4p_bba_o('delete_visible_to_admins');
-                        } else if (d4p_is_user_moderator()) {
-                            $allow = d4p_bba_o('delete_visible_to_moderators');
-                        } else if ($author_id == $user_ID) {
-                            $allow = d4p_bba_o('delete_visible_to_author');
-                        }
+		            $allow = 'no';
+		            if (d4p_is_user_admin()) {
+			            $allow = d4p_bba_o('delete_visible_to_admins');
+		            } else if (d4p_is_user_moderator()) {
+			            $allow = d4p_bba_o('delete_visible_to_moderators');
+		            } else if ($author_id == $user_ID) {
+			            $allow = d4p_bba_o('delete_visible_to_author');
+		            }
 
-                        if ($allow == 'delete' || $allow == 'both') {
-                            $actions[] = '<a class="d4p-bba-action-delete" href="'.add_query_arg('d4pbbaction', 'delete', $url).'">'.__("delete", "gd-bbpress-attachments").'</a>';
-                        }
+		            if ($allow == 'delete' || $allow == 'both') {
+			            $actions[] = '<a class="d4p-bba-action-delete" href="'.add_query_arg('d4pbbaction', 'delete', $url).'">'.__("delete", "gd-bbpress-attachments").'</a>';
+		            }
 
-                        if ($allow == 'detach' || $allow == 'both') {
-                            $actions[] = '<a class="d4p-bba-action-detach" href="'.add_query_arg('d4pbbaction', 'detach', $url).'">'.__("detach", "gd-bbpress-attachments").'</a>';
-                        }
+		            if ($allow == 'detach' || $allow == 'both') {
+			            $actions[] = '<a class="d4p-bba-action-detach" href="'.add_query_arg('d4pbbaction', 'detach', $url).'">'.__("detach", "gd-bbpress-attachments").'</a>';
+		            }
 
-                        if (count($actions) > 0) {
-                            $actions = ' <span class="d4p-bba-actions">['.join(' | ', $actions).']</span>';
-                        } else {
-                            $actions = '';
-                        }
+		            if (count($actions) > 0) {
+			            $actions = ' <span class="d4p-bba-actions">['.join(' | ', $actions).']</span>';
+		            } else {
+			            $actions = '';
+		            }
 
-                        $file = get_attached_file($attachment->ID);
-                        $ext = pathinfo($file, PATHINFO_EXTENSION);
-                        $filename = pathinfo($file, PATHINFO_BASENAME);
-                        $file_url = wp_get_attachment_url($attachment->ID);
+		            $file = get_attached_file($attachment->ID);
+		            $ext = pathinfo($file, PATHINFO_EXTENSION);
+		            $filename = pathinfo($file, PATHINFO_BASENAME);
+		            $file_url = wp_get_attachment_url($attachment->ID);
 
-                        $html = $class_li = $class_a = $rel_a = "";
-                        $a_title = $filename;
-                        $caption = false;
+		            $html = $class_li = $class_a = $rel_a = "";
+		            $a_title = $filename;
+		            $caption = false;
 
-                        $img = false;
-                        if (d4p_bba_o('image_thumbnail_active') == 1) {
-                            $html = wp_get_attachment_image($attachment->ID, 'd4p-bbp-thumb');
+		            $img = false;
+		            if (d4p_bba_o('image_thumbnail_active') == 1) {
+			            $html = wp_get_attachment_image($attachment->ID, 'd4p-bbp-thumb');
 
-                            if ($html != '') {
-                                $img = true;
+			            if ($html != '') {
+				            $img = true;
 
-                                $class_li = 'bbp-atthumb';
+				            $class_li = 'bbp-atthumb';
 
-                                if (d4p_bba_o('image_thumbnail_inline') == 1) {
-                                    $class_li .= ' bbp-inline';
-                                }
+				            if (d4p_bba_o('image_thumbnail_inline') == 1) {
+					            $class_li .= ' bbp-inline';
+				            }
 
-                                $class_a = d4p_bba_o('image_thumbnail_css');
-                                $caption = d4p_bba_o('image_thumbnail_caption') == 1;
+				            $class_a = d4p_bba_o('image_thumbnail_css');
+				            $caption = d4p_bba_o('image_thumbnail_caption') == 1;
 
-                                $rel_a = ' rel="'.d4p_bba_o('image_thumbnail_rel').'"';
-                                $rel_a = str_replace('%ID%', $id, $rel_a);
-                                $rel_a = str_replace('%TOPIC%', bbp_get_topic_id(), $rel_a);
-                            }
-                        }
+				            $rel_a = ' rel="'.d4p_bba_o('image_thumbnail_rel').'"';
+				            $rel_a = str_replace('%ID%', $id, $rel_a);
+				            $rel_a = str_replace('%TOPIC%', bbp_get_topic_id(), $rel_a);
+			            }
+		            }
 
-                        $item = '<li id="d4p-bbp-attachment_'.$attachment->ID.'" class="d4p-bbp-attachment d4p-bbp-attachment-'.$ext.' '.$class_li.'">';
+		            $item = '<li id="d4p-bbp-attachment_'.$attachment->ID.'" class="d4p-bbp-attachment d4p-bbp-attachment-'.$ext.' '.$class_li.'">';
 
-                        if ($html == '') {
-                            $html = $filename;
+		            if ($html == '') {
+			            $html = $filename;
 
-                            if (d4p_bba_o("attchment_icons") == 1) {
-                                $class_li = "bbp-atticon bbp-atticon-".$this->icon($ext);
-                            }
-                        }
+			            if (d4p_bba_o("attachment_icons") == 1) {
+				            $class_li = "bbp-atticon bbp-atticon-".$this->icon($ext);
+			            }
+		            }
 
-                        if ($img) {
-                            if ($caption) {
-                                $item .= '<div style="width: '.d4p_bba_o("image_thumbnail_size_x").'px" class="wp-caption">';
-                            }
+		            if ($img) {
+			            if ($caption) {
+				            $item .= '<div style="width: '.d4p_bba_o("image_thumbnail_size_x").'px" class="wp-caption">';
+			            }
 
-                            $item .= '<a class="'.$class_a.'"'.$rel_a.' href="'.$file_url.'" title="'.$a_title.'">'.$html.'</a>';
+			            $item .= '<a class="'.$class_a.'"'.$rel_a.' href="'.$file_url.'" title="'.$a_title.'">'.$html.'</a>';
 
-                            if ($caption) {
-                                $a_title = '<a href="'.$file_url.'"'.$_download.'>'.$a_title.'</a>';
+			            if ($caption) {
+				            $a_title = '<a href="'.$file_url.'"'.$_download.'>'.$a_title.'</a>';
 
-                                $item .= '<p class="wp-caption-text">'.$a_title.'<br/>'.$actions.'</p></div>';
-                            }
-                        } else {
-                            $item .= '<span role="presentation" class="'.$class_li.'"></span> ';
-                            $item .= '<div class="d4p-bbp-att-wrapper"><a class="'.$class_a.'"'.$rel_a.$_download.' href="'.$file_url.'" title="'.$a_title.'">'.$html.'</a>'.$actions.'</div>';
-                        }
+				            $item .= '<p class="wp-caption-text">'.$a_title.'<br/>'.$actions.'</p></div>';
+			            }
+		            } else {
+			            $item .= '<span role="presentation" class="'.$class_li.'"></span> ';
+			            $item .= '<div class="d4p-bbp-att-wrapper"><a class="'.$class_a.'"'.$rel_a.$_download.' href="'.$file_url.'" title="'.$a_title.'">'.$html.'</a>'.$actions.'</div>';
+		            }
 
-                        $item .= '</li>';
+		            $item .= '</li>';
 
-                        if ($img) {
-                            $thumbnails .= $item;
-                            $images++;
-                        } else {
-                            $listing .= $item;
-                            $files++;
-                        }
-                    }
+		            if ($img) {
+			            $thumbnails .= $item;
+			            $images++;
+		            } else {
+			            $listing .= $item;
+			            $files++;
+		            }
+	            }
 
-                    $thumbnails .= '</ol>';
-                    $listing .= '</ol>';
+	            $thumbnails .= '</ol>';
+	            $listing .= '</ol>';
 
-                    if ($images > 0) {
-                        $content .= $thumbnails;
-                    }
+	            if ($images > 0) {
+		            $content .= $thumbnails;
+	            }
 
-                    if ($files > 0) {
-                        $content .= $listing;
-                    }
-                }
+	            if ($files > 0) {
+		            $content .= $listing;
+	            }
             }
 
             $content .= '</div>';
@@ -393,7 +391,7 @@ class GDATTFront {
                 $content .= '<ol';
 
                 $class_li = 'bbp-file-error';
-                if (d4p_bba_o("attchment_icons") == 1) {
+                if (d4p_bba_o("attachment_icons") == 1) {
                     $content .= ' class="with-icons"';
                     $class_li .= ' bbp-atticon bbp-atticon-error';
                 }

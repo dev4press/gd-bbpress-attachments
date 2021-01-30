@@ -1,4 +1,5 @@
 /*jslint regexp: true, confusion: true, undef: true, sloppy: true, eqeq: true, vars: true, white: true, plusplus: true, maxerr: 50, indent: 4 */
+/*global gdbbPressAttachmentsInit*/
 
 ;(function($, window, document, undefined) {
     window.wp = window.wp || {};
