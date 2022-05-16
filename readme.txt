@@ -110,7 +110,7 @@ Another common issue is that WordPress Media Library upload is not working. If t
 Various updates and improvements.
 
 == Changelog ==
-= 4.3 (2022.05.16) =
+= 4.3.1 (2022.05.16) =
 * New plugin is tested with WordPress 6.0
 
 = 4.3 (2021.10.05) =
