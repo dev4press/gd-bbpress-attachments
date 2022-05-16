@@ -1,11 +1,11 @@
 === GD bbPress Attachments ===
 Contributors: GDragoN
 Donate link: https://plugins.dev4press.com/gd-bbpress-attachments/
-Version: 4.3
+Version: 4.3.1
 Tags: dev4press, bbpress, attachments, upload, media library, forum, topic, reply, limit, meta
 Requires at least: 5.1
 Requires PHP: 7.0
-Tested up to: 5.9
+Tested up to: 6.0
 Stable tag: trunk
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -110,6 +110,9 @@ Another common issue is that WordPress Media Library upload is not working. If t
 Various updates and improvements.
 
 == Changelog ==
+= 4.3 (2022.05.16) =
+* New plugin is tested with WordPress 6.0
+
 = 4.3 (2021.10.05) =
 * New system requirements: WordPress 5.1 or newer
 * Improvements to the plugin readme file
