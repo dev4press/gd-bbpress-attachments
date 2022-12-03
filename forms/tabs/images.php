@@ -1,4 +1,4 @@
-<?php if (isset($_GET["settings-updated"]) && $_GET["settings-updated"] == "true") { ?>
+<?php if (isset($_GET["settings-updated"]) && $_GET["settings-updated"] === "true") { ?>
     <div class="updated settings-error" id="setting-error-settings_updated">
         <p><strong><?php _e("Settings saved.", "gd-bbpress-attachments"); ?></strong></p>
     </div>
@@ -12,7 +12,7 @@
             <p><?php _e("Attached images can be displayed as thumbnails, and from here you can control this.", "gd-bbpress-attachments"); ?></p>
             <table class="form-table">
                 <tbody>
-                <tr valign="top">
+                <tr>
                     <th scope="row">
                         <label for="image_thumbnail_active"><?php _e("Activated", "gd-bbpress-attachments"); ?></label>
                     </th>
@@ -22,7 +22,7 @@
                         } ?> name="image_thumbnail_active"/>
                     </td>
                 </tr>
-                <tr valign="top">
+                <tr>
                     <th scope="row">
                         <label for="image_thumbnail_caption"><?php _e("With caption", "gd-bbpress-attachments"); ?></label>
                     </th>
@@ -32,7 +32,7 @@
                         } ?> name="image_thumbnail_caption"/>
                     </td>
                 </tr>
-                <tr valign="top">
+                <tr>
                     <th scope="row">
                         <label for="image_thumbnail_inline"><?php _e("In line", "gd-bbpress-attachments"); ?></label>
                     </th>
@@ -42,20 +42,20 @@
                         } ?> name="image_thumbnail_inline"/>
                     </td>
                 </tr>
-                <tr valign="top">
+                <tr>
                     <th scope="row">
                         <label for="image_thumbnail_css"><?php _e("CSS class", "gd-bbpress-attachments"); ?></label>
                     </th>
                     <td>
-                        <input type="text" class="widefat" value="<?php echo $options["image_thumbnail_css"]; ?>" id="image_thumbnail_css" name="image_thumbnail_css"/>
+                        <input type="text" class="widefat" value="<?php echo esc_attr($options["image_thumbnail_css"]); ?>" id="image_thumbnail_css" name="image_thumbnail_css"/>
                     </td>
                 </tr>
-                <tr valign="top">
+                <tr>
                     <th scope="row">
                         <label for="image_thumbnail_rel"><?php _e("REL attribute", "gd-bbpress-attachments"); ?></label>
                     </th>
                     <td>
-                        <input type="text" class="widefat" value="<?php echo $options["image_thumbnail_rel"]; ?>" id="image_thumbnail_rel" name="image_thumbnail_rel"/><br/>
+                        <input type="text" class="widefat" value="<?php echo esc_attr($options["image_thumbnail_rel"]); ?>" id="image_thumbnail_rel" name="image_thumbnail_rel"/><br/>
                         <em><?php _e("You can use these tags", "gd-bbpress-attachments"); ?>: %ID%, %TOPIC%</em>
                     </td>
                 </tr>
@@ -70,18 +70,18 @@
             </p>
             <table class="form-table">
                 <tbody>
-                <tr valign="top">
+                <tr>
                     <th scope="row">
                         <label for="image_thumbnail_size_x"><?php _e("Thumbnail size", "gd-bbpress-attachments"); ?></label>
                     </th>
                     <td>x:</td>
                     <td>
-                        <input step="1" min="1" type="number" class="widefat small-text" value="<?php echo $options["image_thumbnail_size_x"]; ?>" id="image_thumbnail_size_x" name="image_thumbnail_size_x"/>
+                        <input step="1" min="1" type="number" class="widefat small-text" value="<?php echo esc_attr($options["image_thumbnail_size_x"]); ?>" id="image_thumbnail_size_x" name="image_thumbnail_size_x"/>
                         <span class="description">px</span>
                     </td>
                     <td>y:</td>
                     <td>
-                        <input step="1" min="1" type="number" class="widefat small-text" value="<?php echo $options["image_thumbnail_size_y"]; ?>" id="image_thumbnail_size_y" name="image_thumbnail_size_y"/>
+                        <input step="1" min="1" type="number" class="widefat small-text" value="<?php echo esc_attr($options["image_thumbnail_size_y"]); ?>" id="image_thumbnail_size_y" name="image_thumbnail_size_y"/>
                         <span class="description">px</span>
                     </td>
                 </tr>

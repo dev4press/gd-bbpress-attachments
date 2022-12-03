@@ -23,11 +23,9 @@
         <a target="_blank" href="https://plugins.dev4press.com/gd-knowledge-base/">GD Knowledge Base Pro</a><br/>
         <a target="_blank" href="https://plugins.dev4press.com/gd-rating-system/">GD Rating System Pro</a><br/>
         <a target="_blank" href="https://plugins.dev4press.com/gd-mail-queue/">GD Mail Queue Pro</a><br/>
-        <a target="_blank" href="https://plugins.dev4press.com/gd-clever-widgets/">GD Clever Widgets Pro</a><br/>
         <a target="_blank" href="https://plugins.dev4press.com/gd-security-toolbox/">GD Security Toolbox Pro</a><br/>
         <a target="_blank" href="https://plugins.dev4press.com/gd-seo-toolbox/">GD SEO Toolbox Pro</a><br/>
         <a target="_blank" href="https://plugins.dev4press.com/gd-content-tools/">GD Content Tools Pro</a><br/>
-        <a target="_blank" href="https://plugins.dev4press.com/gd-swift-navigator/">GD Swift Navigator Pro</a><br/>
         <a target="_blank" href="https://plugins.dev4press.com/gd-press-tools/">GD Press Tools Pro</a>
     </fieldset>
 
@@ -46,7 +44,6 @@
 <div class="d4p-clear"></div>
 
 <div class="d4p-copyright">
-    Dev4Press &copy; 2008 - 2021
-    <a target="_blank" href="https://www.dev4press.com">www.dev4press.com</a> | Golden Dragon WebStudio
-    <a target="_blank" href="https://www.gdragon.info">www.gdragon.info</a>
+    Dev4Press &copy; 2008 - 2022
+    <a target="_blank" href="https://www.dev4press.com">www.dev4press.com</a>
 </div>

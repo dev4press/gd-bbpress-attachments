@@ -78,6 +78,11 @@ function d4p_get_forum_id() {
     return $forum_id;
 }
 
+/**
+ * Get option value.
+ *
+ * @return mixed
+ */
 function d4p_bba_o($name) {
     return GDATTCore::instance()->o[$name];
 }

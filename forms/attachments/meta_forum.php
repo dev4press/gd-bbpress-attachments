@@ -17,13 +17,13 @@
 <p>
     <strong class="label" style="width: 160px;"><?php _e("Maximum file size", "gd-bbpress-attachments"); ?>:</strong>
     <label for="gdbbatt_max_file_size" class="screen-reader-text"><?php _e("Maximum file size", "gd-bbpress-attachments"); ?>:</label>
-    <br/><input step="1" min="1" type="number" class="widefat small-text" value="<?php echo $meta["max_file_size"]; ?>" name="gdbbatt[max_file_size]" id="gdbbatt_max_file_size"/>
+    <br/><input step="1" min="1" type="number" class="widefat small-text" value="<?php echo esc_attr($meta["max_file_size"]); ?>" name="gdbbatt[max_file_size]" id="gdbbatt_max_file_size"/>
     <span class="description">KB</span>
 </p>
 <p>
     <strong class="label" style="width: 160px;"><?php _e("Maximum files to upload", "gd-bbpress-attachments"); ?>:</strong>
     <label for="gdbbatt_max_to_upload" class="screen-reader-text"><?php _e("Maximum files to upload", "gd-bbpress-attachments"); ?>:</label>
-    <br/><input step="1" min="1" type="number" class="widefat small-text" value="<?php echo $meta["max_to_upload"]; ?>" name="gdbbatt[max_to_upload]" id="gdbbatt_max_to_upload"/>
+    <br/><input step="1" min="1" type="number" class="widefat small-text" value="<?php echo esc_attr($meta["max_to_upload"]); ?>" name="gdbbatt[max_to_upload]" id="gdbbatt_max_to_upload"/>
     <span class="description"><?php _e("at once", "gd-bbpress-attachments"); ?></span>
 </p>
 <p>

@@ -248,8 +248,6 @@ class GDATTFront {
             $content .= '<div class="bbp-attachments">';
             $content .= '<h6>'.__("Attachments", "gd-bbpress-attachments").':</h6>';
 
-            $_download = ' download';
-
             if (!is_user_logged_in() && GDATTCore::instance()->is_hidden_from_visitors()) {
                 $content .= sprintf(__("You must be <a href='%s'>logged in</a> to view attached files.", "gd-bbpress-attachments"), wp_login_url(get_permalink()));
             } else {
@@ -303,7 +301,7 @@ class GDATTFront {
 		            $filename = pathinfo($file, PATHINFO_BASENAME);
 		            $file_url = wp_get_attachment_url($attachment->ID);
 
-		            $html = $class_li = $class_a = $rel_a = "";
+		            $html = $class_li = $class_span = $class_a = $rel_a = "";
 		            $a_title = $filename;
 		            $caption = false;
 
@@ -323,37 +321,39 @@ class GDATTFront {
 				            $class_a = d4p_bba_o('image_thumbnail_css');
 				            $caption = d4p_bba_o('image_thumbnail_caption') == 1;
 
-				            $rel_a = ' rel="'.d4p_bba_o('image_thumbnail_rel').'"';
+				            $rel_a = ' rel="'.esc_attr(d4p_bba_o('image_thumbnail_rel')).'"';
 				            $rel_a = str_replace('%ID%', $id, $rel_a);
 				            $rel_a = str_replace('%TOPIC%', bbp_get_topic_id(), $rel_a);
 			            }
 		            }
 
-		            $item = '<li id="d4p-bbp-attachment_'.$attachment->ID.'" class="d4p-bbp-attachment d4p-bbp-attachment-'.$ext.' '.$class_li.'">';
+					$item_class = 'd4p-bbp-attachment d4p-bbp-attachment-'.$ext.' '.$class_li;
+
+		            $item = '<li id="d4p-bbp-attachment_'.$attachment->ID.'" class="'.esc_attr($item_class).'">';
 
 		            if ($html == '') {
 			            $html = $filename;
 
 			            if (d4p_bba_o("attachment_icons") == 1) {
-				            $class_li = "bbp-atticon bbp-atticon-".$this->icon($ext);
+				            $class_span = "bbp-atticon bbp-atticon-".$this->icon($ext);
 			            }
 		            }
 
 		            if ($img) {
 			            if ($caption) {
-				            $item .= '<div style="width: '.d4p_bba_o("image_thumbnail_size_x").'px" class="wp-caption">';
+				            $item .= '<div style="width: '.esc_attr(d4p_bba_o("image_thumbnail_size_x")).'px" class="wp-caption">';
 			            }
 
-			            $item .= '<a class="'.$class_a.'"'.$rel_a.' href="'.$file_url.'" title="'.$a_title.'">'.$html.'</a>';
+			            $item .= '<a class="'.esc_attr($class_a).'"'.$rel_a.' href="'.esc_url($file_url).'" title="'.esc_attr($a_title).'">'.$html.'</a>';
 
 			            if ($caption) {
-				            $a_title = '<a href="'.$file_url.'"'.$_download.'>'.$a_title.'</a>';
+				            $a_title = '<a href="'.esc_url($file_url).'" download>'.$a_title.'</a>';
 
 				            $item .= '<p class="wp-caption-text">'.$a_title.'<br/>'.$actions.'</p></div>';
 			            }
 		            } else {
-			            $item .= '<span role="presentation" class="'.$class_li.'"></span> ';
-			            $item .= '<div class="d4p-bbp-att-wrapper"><a class="'.$class_a.'"'.$rel_a.$_download.' href="'.$file_url.'" title="'.$a_title.'">'.$html.'</a>'.$actions.'</div>';
+			            $item .= '<span role="presentation" class="'.esc_attr($class_span).'"></span> ';
+			            $item .= '<div class="d4p-bbp-att-wrapper"><a class="'.esc_attr($class_a).'"'.$rel_a.' href="'.esc_url($file_url).'" title="'.esc_attr($a_title).'" download>'.$html.'</a>'.$actions.'</div>';
 		            }
 
 		            $item .= '</li>';
@@ -399,7 +399,7 @@ class GDATTFront {
                 $content .= '>';
 
                 foreach ($errors as $error) {
-                    $content .= '<li class="'.$class_li.'"><span role="presentation" class="'.$class_li.'"></span> ';
+                    $content .= '<li class="'.esc_attr($class_li).'"><span role="presentation" class="'.esc_attr($class_li).'"></span> ';
                     $content .= '<div class="d4p-bbp-att-wrapper"><strong>'.esc_html($error['file']).'</strong>: '.__($error['message'], "gd-bbpress-attachments").'</div></li>';
                 }
 

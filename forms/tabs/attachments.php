@@ -12,25 +12,25 @@
             <p><?php _e("These settings can be overridden for individual forums.", "gd-bbpress-attachments"); ?></p>
             <table class="form-table">
                 <tbody>
-                <tr valign="top">
+                <tr>
                     <th scope="row">
                         <label for="max_file_size"><?php _e("Maximum file size", "gd-bbpress-attachments"); ?></label>
                     </th>
                     <td>
-                        <input step="1" min="1" type="number" class="widefat small-text" value="<?php echo $options["max_file_size"]; ?>" id="max_file_size" name="max_file_size"/>
+                        <input step="1" min="1" type="number" class="widefat small-text" value="<?php echo esc_attr($options["max_file_size"]); ?>" id="max_file_size" name="max_file_size"/>
                         <span class="description">KB</span>
                     </td>
                 </tr>
-                <tr valign="top">
+                <tr>
                     <th scope="row">
                         <label for="max_to_upload"><?php _e("Maximum files to upload", "gd-bbpress-attachments"); ?></label>
                     </th>
                     <td>
-                        <input step="1" min="1" type="number" class="widefat small-text" value="<?php echo $options["max_to_upload"]; ?>" id="max_to_upload" name="max_to_upload"/>
+                        <input step="1" min="1" type="number" class="widefat small-text" value="<?php echo esc_attr($options["max_to_upload"]); ?>" id="max_to_upload" name="max_to_upload"/>
                         <span class="description"><?php _e("at once", "gd-bbpress-attachments"); ?></span>
                     </td>
                 </tr>
-                <tr valign="top">
+                <tr>
                     <th scope="row">
                         <label for="hide_from_visitors"><?php _e("Hide attachments", "gd-bbpress-attachments"); ?></label>
                     </th>
@@ -50,7 +50,7 @@
             <p><?php _e("Only users having one of the selected roles will be able to attach files.", "gd-bbpress-attachments"); ?></p>
             <table class="form-table">
                 <tbody>
-                <tr valign="top">
+                <tr>
                     <th scope="row"><?php _e("Allow upload to", "gd-bbpress-attachments") ?></th>
                     <td>
                         <fieldset>
@@ -76,7 +76,7 @@
             <p><?php _e("Select what to do with attachments when topic or reply with attachments is deleted.", "gd-bbpress-attachments"); ?></p>
             <table class="form-table">
                 <tbody>
-                <tr valign="top">
+                <tr>
                     <th scope="row"><label><?php _e("Attachments Action", "gd-bbpress-attachments"); ?></label></th>
                     <td>
                         <select name="delete_attachments" class="widefat">
@@ -102,7 +102,7 @@
             <p><?php _e("Plugin will attempt to load files automatically when needed. If that fails, try using this option.", "gd-bbpress-attachments"); ?></p>
             <table class="form-table">
                 <tbody>
-                <tr valign="top">
+                <tr>
                     <th scope="row">
                         <label for="include_always"><?php _e("Always Include", "gd-bbpress-attachments"); ?></label>
                     </th>
@@ -121,7 +121,7 @@
             <p><?php _e("With these options you can modify the forums to include attachment elements.", "gd-bbpress-attachments"); ?></p>
             <table class="form-table">
                 <tbody>
-                <tr valign="top">
+                <tr>
                     <th scope="row">
                         <label for="attachment_icon"><?php _e("Attachment Icon", "gd-bbpress-attachments"); ?></label>
                     </th>
@@ -131,7 +131,7 @@
                         } ?> name="attachment_icon"/>
                     </td>
                 </tr>
-                <tr valign="top">
+                <tr>
                     <th scope="row">
                         <label for="attachment_icons"><?php _e("File Type Icons", "gd-bbpress-attachments"); ?></label>
                     </th>

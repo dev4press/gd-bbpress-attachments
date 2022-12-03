@@ -12,7 +12,7 @@
             <p><?php _e("Each failed upload will be logged in postmeta table. Administrators and topic/reply authors can see the log.", "gd-bbpress-attachments"); ?></p>
             <table class="form-table">
                 <tbody>
-                <tr valign="top">
+                <tr>
                     <th scope="row">
                         <label for="log_upload_errors"><?php _e("Activated", "gd-bbpress-attachments"); ?></label></th>
                     <td>
@@ -21,7 +21,7 @@
                         } ?> name="log_upload_errors"/>
                     </td>
                 </tr>
-                <tr valign="top">
+                <tr>
                     <th scope="row">
                         <label for="errors_visible_to_admins"><?php _e("Visible to administrators", "gd-bbpress-attachments"); ?></label>
                     </th>
@@ -31,7 +31,7 @@
                         } ?> name="errors_visible_to_admins"/>
                     </td>
                 </tr>
-                <tr valign="top">
+                <tr>
                     <th scope="row">
                         <label for="errors_visible_to_moderators"><?php _e("Visible to moderators", "gd-bbpress-attachments"); ?></label>
                     </th>
@@ -41,7 +41,7 @@
                         } ?> name="errors_visible_to_moderators"/>
                     </td>
                 </tr>
-                <tr valign="top">
+                <tr>
                     <th scope="row">
                         <label for="errors_visible_to_author"><?php _e("Visible to author", "gd-bbpress-attachments"); ?></label>
                     </th>
@@ -60,7 +60,7 @@
             <p><?php _e("Once uploaded and attached, attachments can be deleted. Only administrators and authors can do this.", "gd-bbpress-attachments"); ?></p>
             <table class="form-table">
                 <tbody>
-                <tr valign="top">
+                <tr>
                     <th scope="row"><label><?php _e("Administrators", "gd-bbpress-attachments"); ?></label></th>
                     <td>
                         <select name="delete_visible_to_admins" class="widefat">
@@ -79,7 +79,7 @@
                         </select>
                     </td>
                 </tr>
-                <tr valign="top">
+                <tr>
                     <th scope="row"><label><?php _e("Moderators", "gd-bbpress-attachments"); ?></label></th>
                     <td>
                         <select name="delete_visible_to_moderators" class="widefat">
@@ -98,7 +98,7 @@
                         </select>
                     </td>
                 </tr>
-                <tr valign="top">
+                <tr>
                     <th scope="row"><label><?php _e("Author", "gd-bbpress-attachments"); ?></label></th>
                     <td>
                         <select name="delete_visible_to_author" class="widefat">
