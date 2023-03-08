@@ -29,6 +29,16 @@ class GDATTAdmin {
 
         if ($this->admin_plugin) {
             wp_enqueue_style('gd-bbpress-attachments', GDBBPRESSATTACHMENTS_URL."css/admin.css", array(), GDBBPRESSATTACHMENTS_VERSION);
+
+			if (isset($_GET['tab']) && $_GET['tab'] == 'tools') {
+				if (isset($_GET['action'])) {
+					require_once( GDBBPRESSATTACHMENTS_PATH . 'code/tools.php' );
+
+					GDATTTools::instance()->process_action();
+
+					exit;
+				}
+	        }
         }
     }
 

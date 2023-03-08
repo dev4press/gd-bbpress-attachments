@@ -66,7 +66,7 @@ if (!function_exists('d4p_bbpress_version')) {
 
 if (!function_exists('d4p_is_bbpress')) {
     function d4p_is_bbpress() {
-        $is = d4p_has_bbpress() ? is_bbpress() : false;
+        $is = d4p_has_bbpress() && is_bbpress();
 
         return apply_filters('d4p_is_bbpress', $is);
     }

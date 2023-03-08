@@ -6,7 +6,7 @@ if (!defined('ABSPATH')) {
 
 class GDATTAdminMeta {
     function __construct() {
-        add_action('after_setup_theme', array($this, 'load'), 10);
+        add_action('after_setup_theme', array($this, 'load') );
     }
 
     public function load() {
@@ -86,7 +86,7 @@ class GDATTAdminMeta {
     }
 
     public function admin_head() { ?>
-        <style type="text/css">
+        <style>
             /*<![CDATA[*/
             th.column-gdbbatt_count,
             td.column-gdbbatt_count {

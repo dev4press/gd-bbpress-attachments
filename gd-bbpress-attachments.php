@@ -7,7 +7,7 @@ Description:       Implements attachments upload to the topics and replies in bb
 Author:            Milan Petrovic
 Author URI:        https://www.dev4press.com/
 Text Domain:       gd-bbpress-attachments
-Version:           4.4
+Version:           4.5
 Requires at least: 5.3
 Tested up to:      6.1
 Requires PHP:      7.0
@@ -15,7 +15,7 @@ License:           GPLv3 or later
 License URI:       https://www.gnu.org/licenses/gpl-3.0.html
 
 == Copyright ==
-Copyright 2008 - 2022 Milan Petrovic (email: support@dev4press.com)
+Copyright 2008 - 2023 Milan Petrovic (email: support@dev4press.com)
 
 This program is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

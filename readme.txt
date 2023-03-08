@@ -1,7 +1,7 @@
 === GD bbPress Attachments ===
 Contributors: GDragoN
 Donate link: https://plugins.dev4press.com/gd-bbpress-attachments/
-Version: 4.4
+Version: 4.5
 Tags: dev4press, bbpress, attachments, upload, media library, forum, topic, reply, limit, meta
 Requires at least: 5.3
 Requires PHP: 7.0
@@ -31,7 +31,7 @@ GD bbPress Attachments is an easy-to-use plugin for WordPress and bbPress for im
 * Administration: metabox with attachments list and errors for topics and replies.
 
 = bbPress Plugin Versions =
-GD bbPress Attachments 4.4 supports bbPress 2.6.2 or newer. Older bbPress versions are no longer supported!
+GD bbPress Attachments 4.5 supports bbPress 2.6.2 or newer. Older bbPress versions are no longer supported!
 
 = More free Dev4Press plugins for bbPress =
 * [GD Forum Manager](https://wordpress.org/plugins/gd-forum-manager-for-bbpress/) - quick and bulk forums and topics edit
@@ -75,10 +75,10 @@ With more features on the roadmap exclusively for Pro version.
 
 == Installation ==
 = General Requirements =
-* PHP: 7.0 or newer
+* PHP: 7.3 or newer
 
 = WordPress Requirements =
-* WordPress: 5.3 or newer
+* WordPress: 5.5 or newer
 
 = bbPress Requirements =
 * bbPress Plugin: 2.6.2 or newer
@@ -110,6 +110,15 @@ Another common issue is that WordPress Media Library upload is not working. If t
 Various updates and improvements.
 
 == Changelog ==
+= 4.5 (2023.03.08) =
+* New Tools tab added to plugin admin page
+* New Tools: option to clear all logged upload errors
+* New system requirements: PHP 7.3 or newer
+* New system requirements: WordPress 5.5 or newer
+* Updated various things in PHP code for better PHP 8.x compatibility
+* Updated plugin admin interface items for better accessibility
+* Fixed some accessibility issues with options labels
+
 = 4.4 (2022.12.03) =
 * New plugin is tested with WordPress 6.1
 * Updated rendering of attachments with improving escaping for attributes
@@ -191,7 +200,7 @@ Various updates and improvements.
 = 2.5 (2017.09.20) =
 * Updated JS and CSS files are by default always loaded
 * Updated WordPress minimal requirement to 4.2
-* Updated several broken URL's
+* Updated several broken URLs
 * Updated and improved readme file
 
 = 2.4 (2016.09.24) =
@@ -212,7 +221,7 @@ Various updates and improvements.
 
 = 2.3 (2015.07.04) =
 * Updated several Dev4Press links
-* Fixed XSS and LFI security issues with unsanitized input
+* Fixed XSS and LFI security issues with un-sanitized input
 * Fixed order of displayed attachments to match upload order
 * Fixed inline image alignment when there is no image caption
 
@@ -228,7 +237,7 @@ Various updates and improvements.
 * Improved default styling for the list of attachments
 * Removed obsolete hooks and functions
 * Removed support for bbPress 2.1.x
-* Fixed method for adding some of the plugin hooks
+* Fixed method for adding some plugin hooks
 * Fixed issue with attachments DIV not closed properly
 * Fixed few typos and missing translation strings
 

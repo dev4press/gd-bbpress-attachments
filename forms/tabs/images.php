@@ -1,5 +1,5 @@
 <?php if (isset($_GET["settings-updated"]) && $_GET["settings-updated"] === "true") { ?>
-    <div class="updated settings-error" id="setting-error-settings_updated">
+    <div class="updated">
         <p><strong><?php _e("Settings saved.", "gd-bbpress-attachments"); ?></strong></p>
     </div>
 <?php } ?>
@@ -19,7 +19,7 @@
                     <td>
                         <input type="checkbox" <?php if ($options["image_thumbnail_active"] == 1) {
                             echo " checked";
-                        } ?> name="image_thumbnail_active"/>
+                        } ?> id="image_thumbnail_active" name="image_thumbnail_active"/>
                     </td>
                 </tr>
                 <tr>
@@ -29,7 +29,7 @@
                     <td>
                         <input type="checkbox" <?php if ($options["image_thumbnail_caption"] == 1) {
                             echo " checked";
-                        } ?> name="image_thumbnail_caption"/>
+                        } ?> id="image_thumbnail_caption" name="image_thumbnail_caption"/>
                     </td>
                 </tr>
                 <tr>
@@ -39,7 +39,7 @@
                     <td>
                         <input type="checkbox" <?php if ($options["image_thumbnail_inline"] == 1) {
                             echo " checked";
-                        } ?> name="image_thumbnail_inline"/>
+                        } ?> id="image_thumbnail_inline" name="image_thumbnail_inline"/>
                     </td>
                 </tr>
                 <tr>

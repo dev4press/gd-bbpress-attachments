@@ -1,5 +1,5 @@
 <?php if (isset($_GET["settings-updated"]) && $_GET["settings-updated"] == "true") { ?>
-    <div class="updated settings-error" id="setting-error-settings_updated">
+    <div class="updated">
         <p><strong><?php _e("Settings saved.", "gd-bbpress-attachments"); ?></strong></p>
     </div>
 <?php } ?>
@@ -18,7 +18,7 @@
                     <td>
                         <input type="checkbox" <?php if ($options["log_upload_errors"] == 1) {
                             echo " checked";
-                        } ?> name="log_upload_errors"/>
+                        } ?> id="log_upload_errors" name="log_upload_errors"/>
                     </td>
                 </tr>
                 <tr>
@@ -28,7 +28,7 @@
                     <td>
                         <input type="checkbox" <?php if ($options["errors_visible_to_admins"] == 1) {
                             echo " checked";
-                        } ?> name="errors_visible_to_admins"/>
+                        } ?> id="errors_visible_to_admins" name="errors_visible_to_admins"/>
                     </td>
                 </tr>
                 <tr>
@@ -38,7 +38,7 @@
                     <td>
                         <input type="checkbox" <?php if ($options["errors_visible_to_moderators"] == 1) {
                             echo " checked";
-                        } ?> name="errors_visible_to_moderators"/>
+                        } ?> id="errors_visible_to_moderators" name="errors_visible_to_moderators"/>
                     </td>
                 </tr>
                 <tr>
@@ -48,7 +48,7 @@
                     <td>
                         <input type="checkbox" <?php if ($options["errors_visible_to_author"] == 1) {
                             echo " checked";
-                        } ?> name="errors_visible_to_author"/>
+                        } ?>  id="errors_visible_to_author" name="errors_visible_to_author"/>
                     </td>
                 </tr>
                 </tbody>
@@ -61,9 +61,9 @@
             <table class="form-table">
                 <tbody>
                 <tr>
-                    <th scope="row"><label><?php _e("Administrators", "gd-bbpress-attachments"); ?></label></th>
+                    <th scope="row"><label for="delete_visible_to_admins"><?php _e("Administrators", "gd-bbpress-attachments"); ?></label></th>
                     <td>
-                        <select name="delete_visible_to_admins" class="widefat">
+                        <select id="delete_visible_to_admins" name="delete_visible_to_admins" class="widefat">
                             <option value="no"<?php if ($options["delete_visible_to_admins"] == "no") {
                                 echo ' selected="selected"';
                             } ?>><?php _e("Don't allow to delete", "gd-bbpress-attachments"); ?></option>
@@ -80,9 +80,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><label><?php _e("Moderators", "gd-bbpress-attachments"); ?></label></th>
+                    <th scope="row"><label for="delete_visible_to_moderators"><?php _e("Moderators", "gd-bbpress-attachments"); ?></label></th>
                     <td>
-                        <select name="delete_visible_to_moderators" class="widefat">
+                        <select id="delete_visible_to_moderators" name="delete_visible_to_moderators" class="widefat">
                             <option value="no"<?php if ($options["delete_visible_to_moderators"] == "no") {
                                 echo ' selected="selected"';
                             } ?>><?php _e("Don't allow to delete", "gd-bbpress-attachments"); ?></option>
@@ -99,9 +99,9 @@
                     </td>
                 </tr>
                 <tr>
-                    <th scope="row"><label><?php _e("Author", "gd-bbpress-attachments"); ?></label></th>
+                    <th scope="row"><label for="delete_visible_to_author"><?php _e("Author", "gd-bbpress-attachments"); ?></label></th>
                     <td>
-                        <select name="delete_visible_to_author" class="widefat">
+                        <select id="delete_visible_to_author" name="delete_visible_to_author" class="widefat">
                             <option value="no"<?php if ($options["delete_visible_to_author"] == "no") {
                                 echo ' selected="selected"';
                             } ?>><?php _e("Don't allow to delete", "gd-bbpress-attachments"); ?></option>

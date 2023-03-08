@@ -41,7 +41,7 @@ class GDATTCore {
         define('GDBBPRESSATTACHMENTS_INSTALLED', $gdd->default_options['version'].' Free');
         define('GDBBPRESSATTACHMENTS_VERSION', $gdd->default_options['version'].'_b'.($gdd->default_options['build'].'_free'));
 
-        $this->plugin_path = dirname(dirname(__FILE__)).'/';
+        $this->plugin_path = dirname( __FILE__, 2 ) . '/';
         $this->plugin_url = plugins_url('/gd-bbpress-attachments/');
 
         define('GDBBPRESSATTACHMENTS_URL', $this->plugin_url);
@@ -182,7 +182,7 @@ class GDATTCore {
 
     public function enabled_for_forum($id = 0) {
         $meta = get_post_meta(bbp_get_forum_id($id), '_gdbbatt_settings', true);
-        return !isset($meta['disable']) || (isset($meta['disable']) && $meta['disable'] == 0);
+        return !isset($meta['disable']) || ( $meta['disable'] == 0 );
     }
 
     public function get_file_size($global_only = false, $forum_id = 0) {

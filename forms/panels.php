@@ -5,7 +5,8 @@ $current = isset($_GET['tab']) ? sanitize_key($_GET['tab']) : 'attachments';
 $tabs = array(
     'attachments' => '<span class="dashicons dashicons-admin-settings" title="'.__("Settings", "gd-bbpress-attachments").'"></span><span class="tab-title"> '.__("Settings", "gd-bbpress-attachments").'</span>',
     'images' => '<span class="dashicons dashicons-images-alt" title="'.__("Images", "gd-bbpress-attachments").'"></span><span class="tab-title"> '.__("Images", "gd-bbpress-attachments").'</span>',
-    'advanced' => '<span class="dashicons dashicons-admin-tools" title="'.__("Advanced", "gd-bbpress-attachments").'"></span><span class="tab-title"> '.__("Advanced", "gd-bbpress-attachments").'</span>',
+    'advanced' => '<span class="dashicons dashicons-archive" title="'.__("Advanced", "gd-bbpress-attachments").'"></span><span class="tab-title"> '.__("Advanced", "gd-bbpress-attachments").'</span>',
+    'tools' => '<span class="dashicons dashicons-admin-tools" title="'.__("Tools", "gd-bbpress-attachments").'"></span><span class="tab-title"> '.__("Tools", "gd-bbpress-attachments").'</span>',
     'd4p' => '<span class="dashicons dashicons-flag" title="'.__("Dev4Press", "gd-bbpress-attachments").'"></span><span class="tab-title"> '.__("Dev4Press", "gd-bbpress-attachments").'</span>',
     'about' => '<span class="dashicons dashicons-info" title="'.__("About", "gd-bbpress-attachments").'"></span><span class="tab-title"> '.__("About", "gd-bbpress-attachments").'</span>'
 );

@@ -200,7 +200,7 @@ class GDATTFront {
             require_once(ABSPATH.'wp-admin/includes/image.php');
 
             foreach ($uploads as $upload) {
-                $wp_filetype = wp_check_filetype(basename($upload['file']), null);
+                $wp_filetype = wp_check_filetype(basename($upload['file']));
                 $attachment = array('post_mime_type' => $wp_filetype['type'],
                     'post_title' => preg_replace('/\.[^.]+$/', '', basename($upload['file'])),
                     'post_content' => '', 'post_status' => 'inherit'

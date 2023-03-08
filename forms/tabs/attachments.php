@@ -1,5 +1,5 @@
 <?php if (isset($_GET["settings-updated"]) && $_GET["settings-updated"] == "true") { ?>
-    <div class="updated settings-error" id="setting-error-settings_updated">
+    <div class="updated">
         <p><strong><?php _e("Settings saved.", "gd-bbpress-attachments"); ?></strong></p>
     </div>
 <?php } ?>
@@ -37,7 +37,7 @@
                     <td>
                         <input class="widefat" type="checkbox" <?php if ($options["hide_from_visitors"] == 1) {
                             echo " checked";
-                        } ?> name="hide_from_visitors"/>
+                        } ?> id="hide_from_visitors" name="hide_from_visitors"/>
                         <?php _e("From visitors", "gd-bbpress-attachments"); ?>
                     </td>
                 </tr>
@@ -58,7 +58,7 @@
                                 <span><?php _e("Allow upload to", "gd-bbpress-attachments"); ?></span></legend>
                             <?php foreach ($_user_roles as $role => $title) { ?>
                                 <label for="roles_to_upload_<?php echo $role; ?>">
-                                    <input type="checkbox" <?php if (!isset($options["roles_to_upload"]) || is_null($options["roles_to_upload"]) || in_array($role, $options["roles_to_upload"])) {
+                                    <input type="checkbox" <?php if ( !isset($options["roles_to_upload"]) || in_array($role, $options["roles_to_upload"])) {
                                         echo " checked";
                                     } ?> value="<?php echo $role; ?>" id="roles_to_upload_<?php echo $role; ?>" name="roles_to_upload[]"/>
                                     <?php echo $title; ?>
@@ -77,9 +77,9 @@
             <table class="form-table">
                 <tbody>
                 <tr>
-                    <th scope="row"><label><?php _e("Attachments Action", "gd-bbpress-attachments"); ?></label></th>
+                    <th scope="row"><label for="delete_attachments"><?php _e("Attachments Action", "gd-bbpress-attachments"); ?></label></th>
                     <td>
-                        <select name="delete_attachments" class="widefat">
+                        <select id="delete_attachments" name="delete_attachments" class="widefat">
                             <option value="detach"<?php if ($options["delete_attachments"] == "detach") {
                                 echo ' selected="selected"';
                             } ?>><?php _e("Leave in media library", "gd-bbpress-attachments"); ?></option>
@@ -109,7 +109,7 @@
                     <td>
                         <input type="checkbox" <?php if ($options["include_always"] == 1) {
                             echo " checked";
-                        } ?> name="include_always"/>
+                        } ?> id="include_always" name="include_always"/>
                     </td>
                 </tr>
                 </tbody>
@@ -128,7 +128,7 @@
                     <td>
                         <input type="checkbox" <?php if ($options["attachment_icon"] == 1) {
                             echo " checked";
-                        } ?> name="attachment_icon"/>
+                        } ?> id="attachment_icon" name="attachment_icon"/>
                     </td>
                 </tr>
                 <tr>
@@ -138,7 +138,7 @@
                     <td>
                         <input type="checkbox" <?php if ($options["attachment_icons"] == 1) {
                             echo " checked";
-                        } ?> name="attachment_icons"/>
+                        } ?> id="attachment_icons" name="attachment_icons"/>
                     </td>
                 </tr>
                 </tbody>
