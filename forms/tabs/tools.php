@@ -9,23 +9,23 @@ $admin = "edit.php?post_type=forum&page=gdbbpress_attachments&tab=tools&action=c
 
 <?php if (isset($_GET["tools-errors-clear"])) { ?>
     <div class="updated">
-        <p><strong><?php _e("All logged upload errors have been removed.", "gd-bbpress-attachments"); ?></strong></p>
+        <p><strong><?php esc_html_e("All logged upload errors have been removed.", "gd-bbpress-attachments"); ?></strong></p>
     </div>
 <?php } ?>
 
 <div class="d4p-settings">
     <fieldset>
-        <h3><?php _e( "Clear all logged upload errors", "gd-bbpress-attachments" ); ?></h3>
-        <p><?php _e( "This tool will remove all logged upload errors from WordPress postmeta table.", "gd-bbpress-attachments" ); ?></p>
+        <h3><?php esc_html_e( "Clear all logged upload errors", "gd-bbpress-attachments" ); ?></h3>
+        <p><?php esc_html_e( "This tool will remove all logged upload errors from WordPress postmeta table.", "gd-bbpress-attachments" ); ?></p>
 
         <p>
-			<?php _e( "Total number of errors", "gd-bbpress-attachments" ); ?>: <strong><?php echo $tools['totals']['errors']; ?></strong><br/>
-			<?php _e( "Total number of posts", "gd-bbpress-attachments" ); ?>: <strong><?php echo $tools['totals']['posts']; ?></strong><br/>
+			<?php esc_html_e( "Total number of errors", "gd-bbpress-attachments" ); ?>: <strong><?php echo esc_html($tools['totals']['errors']); ?></strong><br/>
+			<?php esc_html_e( "Total number of posts", "gd-bbpress-attachments" ); ?>: <strong><?php echo esc_html($tools['totals']['posts']); ?></strong><br/>
         </p>
         <?php if ($tools['totals']['errors'] > 0) { ?>
-        <a class="button-primary" href="<?php echo admin_url($admin); ?>"><?php _e( "Clear all upload errors" ); ?></a>
+        <a class="button-primary" href="<?php echo admin_url($admin); ?>"><?php esc_html_e( "Clear all upload errors" ); ?></a>
         <?php } else { ?>
-        <strong><?php _e("Nothing to clear", "gd-bbpress-attachments"); ?></strong>
+        <strong><?php esc_html_e("Nothing to clear", "gd-bbpress-attachments"); ?></strong>
         <?php } ?>
     </fieldset>
 </div>

@@ -11,7 +11,7 @@ class GDATTFront {
         'xml' => 'xml',
         'excel' => 'xla|xls|xlsx|xlt|xlw|xlam|xlsb|xlsm|xltm',
         'word' => 'docx|dotx|docm|dotm',
-        'image' => 'png|gif|jpg|jpeg|jpe|jp|bmp|tif|tiff|svg',
+        'image' => 'png|gif|jpg|jpeg|jpe|jp|bmp|tif|tiff|svg|webp|heic',
         'psd' => 'psd',
         'ai' => 'ai',
         'archive' => 'zip|rar|gz|gzip|tar',
@@ -86,7 +86,7 @@ class GDATTFront {
 
         wp_localize_script('gdatt-attachments', 'gdbbPressAttachmentsInit', array(
             'max_files' => apply_filters('d4p_bbpressattchment_allow_upload', GDATTCore::instance()->get_max_files(), bbp_get_forum_id()),
-            'are_you_sure' => __("This operation is not reversible. Are you sure?", "gd-bbpress-attachments")
+            'are_you_sure' => esc_html__("This operation is not reversible. Are you sure?", "gd-bbpress-attachments")
         ));
     }
 
@@ -249,7 +249,9 @@ class GDATTFront {
             $content .= '<h6>'.__("Attachments", "gd-bbpress-attachments").':</h6>';
 
             if (!is_user_logged_in() && GDATTCore::instance()->is_hidden_from_visitors()) {
-                $content .= sprintf(__("You must be <a href='%s'>logged in</a> to view attached files.", "gd-bbpress-attachments"), wp_login_url(get_permalink()));
+				$login_url = apply_filters('d4p_bbpressattchment_login_url', wp_login_url(get_permalink()), $post);
+
+                $content .= sprintf(__("You must be <a href='%s'>logged in</a> to view attached files.", "gd-bbpress-attachments"), $login_url);
             } else {
 	            $listing = '<ol';
 	            $thumbnails = '<ol';
@@ -283,11 +285,11 @@ class GDATTFront {
 		            }
 
 		            if ($allow == 'delete' || $allow == 'both') {
-			            $actions[] = '<a class="d4p-bba-action-delete" href="'.add_query_arg('d4pbbaction', 'delete', $url).'">'.__("delete", "gd-bbpress-attachments").'</a>';
+			            $actions[] = '<a class="d4p-bba-action-delete" href="'.add_query_arg('d4pbbaction', 'delete', $url).'">'.esc_html__("delete", "gd-bbpress-attachments").'</a>';
 		            }
 
 		            if ($allow == 'detach' || $allow == 'both') {
-			            $actions[] = '<a class="d4p-bba-action-detach" href="'.add_query_arg('d4pbbaction', 'detach', $url).'">'.__("detach", "gd-bbpress-attachments").'</a>';
+			            $actions[] = '<a class="d4p-bba-action-detach" href="'.add_query_arg('d4pbbaction', 'detach', $url).'">'.esc_html__("detach", "gd-bbpress-attachments").'</a>';
 		            }
 
 		            if (count($actions) > 0) {

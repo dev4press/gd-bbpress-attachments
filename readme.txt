@@ -1,7 +1,7 @@
 === GD bbPress Attachments ===
 Contributors: GDragoN
 Donate link: https://plugins.dev4press.com/gd-bbpress-attachments/
-Version: 4.5
+Version: 4.6
 Tags: dev4press, bbpress, attachments, upload, media library, forum, topic, reply, limit, meta
 Requires at least: 5.5
 Requires PHP: 7.3
@@ -96,27 +96,43 @@ Open the Forums menu, and you will see Attachments item there. This will open a 
 = Why is Media Library required? =
 All attachments uploads are handled by the WordPress Media Library, and plugin uses native WordPress upload functions. When the file is uploaded it will be available through Media Library. Consult WordPress documentation about Media Library requirements.
 
-= Will this plugin work with standalone bbPress installation? =
-No. This plugin requires the plugin versions of bbPress 2.6.2 or higher.
+= Sometimes upload fails without any error? =
+If there is no error to log, it means that PHP during upload has not provided any information about upload, and that upload has failed before reaching WordPress. Usually, this is related to the file size limit in the PHP.
+
+= How can I increase PHP file size limit? =
+This has to be done on server, in the PHP.INI file (depends on the hosting) with the directive called `upload_max_filesize`. Also, you need to increase `post_max_size` value also. If you allow MAX file size of 32MB, and you want to have 4 files uploaded at once, `upload_max_filesize` has to be 32MB and `post_max_size` has to be 128M or more.
 
 = Does this plugin work with bbPress and BuddyPress groups? =
-GD bbPress Attachments 4.2 is tested with BuddyPress 6.0 and newer, using bbPress for Groups forums. Make sure you enable JavaScript and CSS Settings Always Include option in the plugin settings.
+GD bbPress Attachments 4.6 is tested with BuddyPress 10.0 and newer, using bbPress for Groups forums. Make sure you enable JavaScript and CSS Settings Always Include option in the plugin settings.
 
 = What are the common problems that can prevent upload to work? =
 In some cases, it can happen that jQuery is not included on the page, even so, the bbPress requires it to be loaded. That can happen if something else is unloading jQuery. If the jQuery is not present, the upload will not work.
 Another common issue is that WordPress Media Library upload is not working. If that is not set up, attachments upload can't work.
 
+= Will this plugin work with standalone (non WordPress) bbPress installation? =
+No. This plugin requires the plugin versions of bbPress 2.6.2 or higher.
+
 == Upgrade Notice ==
+= 4.6 =
+Few updates and improvements.
+
 = 4.5 =
 Tool to cleanup upload error logs. Various updates and improvements.
 
 == Changelog ==
+= 4.6 (2023.05.26) =
+* New filter `d4p_bbpressattchment_login_url` for the login URL
+* New FAQ information included in the plugin readme file
+* New plugin is tested with the upload of the WEBP images
+* Updated more settings page with use of escaping for attributes
+* Updated icons format definition for attached files
+
 = 4.5 (2023.03.08) =
 * New Tools tab added to plugin admin page
 * New Tools: option to clear all logged upload errors
-* New system requirements: PHP 7.3 or newer
-* New system requirements: WordPress 5.5 or newer
-* New: fully tested with PHP 8.0, 8.1 and 8.2
+* New System requirements: PHP 7.3 or newer
+* New System requirements: WordPress 5.5 or newer
+* New plugin fully tested with PHP 8.0, 8.1 and 8.2
 * Updated various things in PHP code for better PHP 8.x compatibility
 * Updated plugin admin interface items for better accessibility
 * Fixed some accessibility issues with options labels

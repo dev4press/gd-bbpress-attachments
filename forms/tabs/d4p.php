@@ -1,6 +1,6 @@
 <div class="d4p-information">
     <fieldset>
-        <h3><?php _e("Premium Plugins for bbPress", "gd-bbpress-attachments"); ?></h3>
+        <h3><?php esc_html_e("Premium Plugins for bbPress", "gd-bbpress-attachments"); ?></h3>
         <a target="_blank" href="https://plugins.dev4press.com/gd-bbpress-toolbox/">GD bbPress Toolbox Pro</a><br/>
         <a target="_blank" href="https://plugins.dev4press.com/gd-quantum-theme-for-bbpress/">GD Quantum Theme Pro</a><br/>
         <a target="_blank" href="https://plugins.dev4press.com/gd-forum-notices-for-bbpress/">GD Forum Notices Pro</a><br/>
@@ -10,7 +10,7 @@
     </fieldset>
 
     <fieldset>
-        <h3><?php _e("More Free Plugins for bbPress", "gd-bbpress-attachments"); ?></h3>
+        <h3><?php esc_html_e("More Free Plugins for bbPress", "gd-bbpress-attachments"); ?></h3>
         <a target="_blank" href="https://plugins.dev4press.com/gd-members-directory-for-bbpress/">GD Members Directory</a><br/>
         <a target="_blank" href="https://wordpress.org/plugins/gd-forum-manager-for-bbpress/">GD Forum Manager</a><br/>
         <a target="_blank" href="https://wordpress.org/plugins/gd-bbpress-tools/">GD bbPress Tools</a><br/>
@@ -19,7 +19,7 @@
     </fieldset>
 
     <fieldset>
-        <h3><?php _e("Other Premium Plugins", "gd-bbpress-attachments"); ?></h3>
+        <h3><?php esc_html_e("Other Premium Plugins", "gd-bbpress-attachments"); ?></h3>
         <a target="_blank" href="https://plugins.dev4press.com/gd-knowledge-base/">GD Knowledge Base Pro</a><br/>
         <a target="_blank" href="https://plugins.dev4press.com/gd-rating-system/">GD Rating System Pro</a><br/>
         <a target="_blank" href="https://plugins.dev4press.com/gd-mail-queue/">GD Mail Queue Pro</a><br/>
@@ -30,7 +30,7 @@
     </fieldset>
 
     <fieldset>
-        <h3><?php _e("More Free Plugins", "gd-bbpress-attachments"); ?></h3>
+        <h3><?php esc_html_e("More Free Plugins", "gd-bbpress-attachments"); ?></h3>
         <a target="_blank" href="https://wordpress.org/plugins/gd-rating-system/">GD Rating System</a><br/>
         <a target="_blank" href="https://wordpress.org/plugins/gd-mail-queue/">GD Mail Queue</a><br/>
         <a target="_blank" href="https://wordpress.org/plugins/gd-pages-navigator/">GD Pages Navigator</a><br/>

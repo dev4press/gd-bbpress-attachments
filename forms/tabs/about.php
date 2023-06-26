@@ -1,6 +1,6 @@
 <div class="d4p-information">
     <fieldset>
-        <h3>GD bbPress Attachments <?php echo $options["version"]; ?></h3>
+        <h3>GD bbPress Attachments <?php echo esc_html($options["version"]); ?></h3>
         <?php
 
         $status = ucfirst($options["status"]);
@@ -8,39 +8,39 @@
             $status .= " #".$options["revision"];
         }
 
-        _e("Release Date: ", "gd-bbpress-attachments");
-        echo '<strong>'.$options["date"].'</strong><br/>';
-        _e("Status: ", "gd-bbpress-attachments");
-        echo '<strong>'.$status.'</strong><br/>';
-        _e("Build: ", "gd-bbpress-attachments");
-        echo '<strong>'.$options["build"].'</strong>';
+        esc_html_e("Release Date: ", "gd-bbpress-attachments");
+        echo '<strong>'.esc_html($options["date"]).'</strong><br/>';
+        esc_html_e("Status: ", "gd-bbpress-attachments");
+        echo '<strong>'.esc_html($status).'</strong><br/>';
+        esc_html_e("Build: ", "gd-bbpress-attachments");
+        echo '<strong>'.esc_html($options["build"]).'</strong>';
 
         ?>
     </fieldset>
 
     <fieldset>
-        <h3><?php _e("System Requirements", "gd-bbpress-attachments"); ?></h3>
+        <h3><?php esc_html_e("System Requirements", "gd-bbpress-attachments"); ?></h3>
         <?php
 
-        _e("PHP: ", "gd-bbpress-attachments");
+        esc_html_e("PHP: ", "gd-bbpress-attachments");
         echo '<strong>7.0 or newer</strong><br/>';
-        _e("WordPress: ", "gd-bbpress-attachments");
+        esc_html_e("WordPress: ", "gd-bbpress-attachments");
         echo '<strong>5.3 or newer</strong><br/>';
-        _e("bbPress: ", "gd-bbpress-attachments");
+        esc_html_e("bbPress: ", "gd-bbpress-attachments");
         echo '<strong>2.6.2 or newer</strong>';
 
         ?>
     </fieldset>
 
     <fieldset>
-        <h3><?php _e("Important Plugin Links", "gd-bbpress-attachments"); ?></h3>
-        <a target="_blank" href="https://plugins.dev4press.com/gd-bbpress-attachments/">GD bbPress Attachments <?php _e("Home Page", "gd-bbpress-attachments"); ?></a><br/>
-        <a target="_blank" href="https://wordpress.org/plugins/gd-bbpress-attachments/">GD bbPress Attachments <?php _e("on", "gd-bbpress-attachments"); ?> WordPress.org</a>
-        <h3><?php _e("Plugin Support", "gd-bbpress-attachments"); ?></h3>
-        <a target="_blank" href="https://support.dev4press.com/forums/forum/plugins-free/gd-bbpress-attachments/"><?php _e("Plugin Support Forum on Dev4Press", "gd-bbpress-attachments"); ?></a><br/>
-        <h3><?php _e("Dev4Press Important Links", "gd-bbpress-attachments"); ?></h3>
-        <a target="_blank" href="https://twitter.com/milangd">Dev4Press <?php _e("on", "gd-bbpress-attachments"); ?> Twitter</a><br/>
-        <a target="_blank" href="https://www.facebook.com/dev4press">Dev4Press Facebook <?php _e("Page", "gd-bbpress-attachments"); ?></a><br/>
+        <h3><?php esc_html_e("Important Plugin Links", "gd-bbpress-attachments"); ?></h3>
+        <a target="_blank" href="https://plugins.dev4press.com/gd-bbpress-attachments/">GD bbPress Attachments <?php esc_html_e("Home Page", "gd-bbpress-attachments"); ?></a><br/>
+        <a target="_blank" href="https://wordpress.org/plugins/gd-bbpress-attachments/">GD bbPress Attachments <?php esc_html_e("on", "gd-bbpress-attachments"); ?> WordPress.org</a>
+        <h3><?php esc_html_e("Plugin Support", "gd-bbpress-attachments"); ?></h3>
+        <a target="_blank" href="https://support.dev4press.com/forums/forum/plugins-free/gd-bbpress-attachments/"><?php esc_html_e("Plugin Support Forum on Dev4Press", "gd-bbpress-attachments"); ?></a><br/>
+        <h3><?php esc_html_e("Dev4Press Important Links", "gd-bbpress-attachments"); ?></h3>
+        <a target="_blank" href="https://twitter.com/milangd">Dev4Press <?php esc_html_e("on", "gd-bbpress-attachments"); ?> Twitter</a><br/>
+        <a target="_blank" href="https://www.facebook.com/dev4press">Dev4Press Facebook <?php esc_html_e("Page", "gd-bbpress-attachments"); ?></a><br/>
     </fieldset>
 </div>
 <div class="d4p-information-second">

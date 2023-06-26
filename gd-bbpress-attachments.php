@@ -7,7 +7,7 @@ Description:       Implements attachments upload to the topics and replies in bb
 Author:            Milan Petrovic
 Author URI:        https://www.dev4press.com/
 Text Domain:       gd-bbpress-attachments
-Version:           4.5
+Version:           4.6
 Requires at least: 5.5
 Tested up to:      6.2
 Requires PHP:      7.3

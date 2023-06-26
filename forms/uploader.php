@@ -1,5 +1,5 @@
 <fieldset class="bbp-form">
-    <legend><?php _e("Upload Attachments", "gd-bbpress-attachments"); ?></legend>
+    <legend><?php esc_html_e("Upload Attachments", "gd-bbpress-attachments"); ?></legend>
     <div class="bbp-template-notice">
         <p><?php
 
@@ -11,9 +11,9 @@
     </div>
     <p class="bbp-attachments-form">
         <label for="bbp_topic_tags">
-            <?php _e("Attachments", "gd-bbpress-attachments"); ?>:
+            <?php esc_html_e("Attachments", "gd-bbpress-attachments"); ?>:
         </label><br/>
         <input type="file" size="40" name="d4p_attachment[]"><br/>
-        <a class="d4p-attachment-addfile" href="#"><?php _e("Add another file", "gd-bbpress-attachments"); ?></a>
+        <a class="d4p-attachment-addfile" href="#"><?php esc_html_e("Add another file", "gd-bbpress-attachments"); ?></a>
     </p>
 </fieldset>

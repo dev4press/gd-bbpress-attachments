@@ -117,7 +117,7 @@ class GDATTAdminMeta {
     }
 
     public function admin_post_columns($columns) {
-        $columns['gdbbatt_count'] = '<img src="'.GDBBPRESSATTACHMENTS_URL.'css/gfx/attachment.png" width="16" height="12" alt="'.__("Attachments", "gd-bbpress-attachments").'" title="'.__("Attachments", "gd-bbpress-attachments").'" />';
+        $columns['gdbbatt_count'] = '<img src="'.GDBBPRESSATTACHMENTS_URL.'css/gfx/attachment.png" width="16" height="12" alt="'.esc_attr__("Attachments", "gd-bbpress-attachments").'" title="'.__("Attachments", "gd-bbpress-attachments").'" />';
 
         return $columns;
     }

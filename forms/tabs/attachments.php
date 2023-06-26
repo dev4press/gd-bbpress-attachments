@@ -1,6 +1,6 @@
 <?php if (isset($_GET["settings-updated"]) && $_GET["settings-updated"] == "true") { ?>
     <div class="updated">
-        <p><strong><?php _e("Settings saved.", "gd-bbpress-attachments"); ?></strong></p>
+        <p><strong><?php esc_html_e("Settings saved.", "gd-bbpress-attachments"); ?></strong></p>
     </div>
 <?php } ?>
 
@@ -8,13 +8,13 @@
     <?php wp_nonce_field("gd-bbpress-attachments"); ?>
     <div class="d4p-settings">
         <fieldset>
-            <h3><?php _e("Global Attachments Settings", "gd-bbpress-attachments"); ?></h3>
-            <p><?php _e("These settings can be overridden for individual forums.", "gd-bbpress-attachments"); ?></p>
+            <h3><?php esc_html_e("Global Attachments Settings", "gd-bbpress-attachments"); ?></h3>
+            <p><?php esc_html_e("These settings can be overridden for individual forums.", "gd-bbpress-attachments"); ?></p>
             <table class="form-table">
                 <tbody>
                 <tr>
                     <th scope="row">
-                        <label for="max_file_size"><?php _e("Maximum file size", "gd-bbpress-attachments"); ?></label>
+                        <label for="max_file_size"><?php esc_html_e("Maximum file size", "gd-bbpress-attachments"); ?></label>
                     </th>
                     <td>
                         <input step="1" min="1" type="number" class="widefat small-text" value="<?php echo esc_attr($options["max_file_size"]); ?>" id="max_file_size" name="max_file_size"/>
@@ -23,22 +23,22 @@
                 </tr>
                 <tr>
                     <th scope="row">
-                        <label for="max_to_upload"><?php _e("Maximum files to upload", "gd-bbpress-attachments"); ?></label>
+                        <label for="max_to_upload"><?php esc_html_e("Maximum files to upload", "gd-bbpress-attachments"); ?></label>
                     </th>
                     <td>
                         <input step="1" min="1" type="number" class="widefat small-text" value="<?php echo esc_attr($options["max_to_upload"]); ?>" id="max_to_upload" name="max_to_upload"/>
-                        <span class="description"><?php _e("at once", "gd-bbpress-attachments"); ?></span>
+                        <span class="description"><?php esc_html_e("at once", "gd-bbpress-attachments"); ?></span>
                     </td>
                 </tr>
                 <tr>
                     <th scope="row">
-                        <label for="hide_from_visitors"><?php _e("Hide attachments", "gd-bbpress-attachments"); ?></label>
+                        <label for="hide_from_visitors"><?php esc_html_e("Hide attachments", "gd-bbpress-attachments"); ?></label>
                     </th>
                     <td>
                         <input class="widefat" type="checkbox" <?php if ($options["hide_from_visitors"] == 1) {
                             echo " checked";
                         } ?> id="hide_from_visitors" name="hide_from_visitors"/>
-                        <?php _e("From visitors", "gd-bbpress-attachments"); ?>
+                        <?php esc_html_e("From visitors", "gd-bbpress-attachments"); ?>
                     </td>
                 </tr>
                 </tbody>
@@ -46,22 +46,22 @@
         </fieldset>
 
         <fieldset>
-            <h3><?php _e("Users Upload Restrictions", "gd-bbpress-attachments"); ?></h3>
-            <p><?php _e("Only users having one of the selected roles will be able to attach files.", "gd-bbpress-attachments"); ?></p>
+            <h3><?php esc_html_e("Users Upload Restrictions", "gd-bbpress-attachments"); ?></h3>
+            <p><?php esc_html_e("Only users having one of the selected roles will be able to attach files.", "gd-bbpress-attachments"); ?></p>
             <table class="form-table">
                 <tbody>
                 <tr>
-                    <th scope="row"><?php _e("Allow upload to", "gd-bbpress-attachments") ?></th>
+                    <th scope="row"><?php esc_html_e("Allow upload to", "gd-bbpress-attachments") ?></th>
                     <td>
                         <fieldset>
                             <legend class="screen-reader-text">
-                                <span><?php _e("Allow upload to", "gd-bbpress-attachments"); ?></span></legend>
+                                <span><?php esc_html_e("Allow upload to", "gd-bbpress-attachments"); ?></span></legend>
                             <?php foreach ($_user_roles as $role => $title) { ?>
-                                <label for="roles_to_upload_<?php echo $role; ?>">
+                                <label for="roles_to_upload_<?php echo esc_html($role); ?>">
                                     <input type="checkbox" <?php if ( !isset($options["roles_to_upload"]) || in_array($role, $options["roles_to_upload"])) {
                                         echo " checked";
-                                    } ?> value="<?php echo $role; ?>" id="roles_to_upload_<?php echo $role; ?>" name="roles_to_upload[]"/>
-                                    <?php echo $title; ?>
+                                    } ?> value="<?php echo esc_html($role); ?>" id="roles_to_upload_<?php echo esc_attr($role); ?>" name="roles_to_upload[]"/>
+                                    <?php echo esc_html($title); ?>
                                 </label><br/>
                             <?php } ?>
                         </fieldset>
@@ -72,23 +72,23 @@
         </fieldset>
 
         <fieldset>
-            <h3><?php _e("Topic and Reply Deleting", "gd-bbpress-attachments"); ?></h3>
-            <p><?php _e("Select what to do with attachments when topic or reply with attachments is deleted.", "gd-bbpress-attachments"); ?></p>
+            <h3><?php esc_html_e("Topic and Reply Deleting", "gd-bbpress-attachments"); ?></h3>
+            <p><?php esc_html_e("Select what to do with attachments when topic or reply with attachments is deleted.", "gd-bbpress-attachments"); ?></p>
             <table class="form-table">
                 <tbody>
                 <tr>
-                    <th scope="row"><label for="delete_attachments"><?php _e("Attachments Action", "gd-bbpress-attachments"); ?></label></th>
+                    <th scope="row"><label for="delete_attachments"><?php esc_html_e("Attachments Action", "gd-bbpress-attachments"); ?></label></th>
                     <td>
                         <select id="delete_attachments" name="delete_attachments" class="widefat">
                             <option value="detach"<?php if ($options["delete_attachments"] == "detach") {
                                 echo ' selected="selected"';
-                            } ?>><?php _e("Leave in media library", "gd-bbpress-attachments"); ?></option>
+                            } ?>><?php esc_html_e("Leave in media library", "gd-bbpress-attachments"); ?></option>
                             <option value="delete"<?php if ($options["delete_attachments"] == "delete") {
                                 echo ' selected="selected"';
-                            } ?>><?php _e("Delete", "gd-bbpress-attachments"); ?></option>
+                            } ?>><?php esc_html_e("Delete", "gd-bbpress-attachments"); ?></option>
                             <option value="nohing"<?php if ($options["delete_attachments"] == "nohing") {
                                 echo ' selected="selected"';
-                            } ?>><?php _e("Do nothing", "gd-bbpress-attachments"); ?></option>
+                            } ?>><?php esc_html_e("Do nothing", "gd-bbpress-attachments"); ?></option>
                         </select>
                     </td>
                 </tr>
@@ -97,14 +97,14 @@
         </fieldset>
 
         <fieldset>
-            <h3><?php _e("JavaScript and CSS Settings", "gd-bbpress-attachments"); ?></h3>
-            <p><?php _e("If you use shortcodes to embed forums, and you rely on plugin to add JS and CSS, you also need to enable this option to skip checking for bbPress specific pages.", "gd-bbpress-attachments"); ?></p>
-            <p><?php _e("Plugin will attempt to load files automatically when needed. If that fails, try using this option.", "gd-bbpress-attachments"); ?></p>
+            <h3><?php esc_html_e("JavaScript and CSS Settings", "gd-bbpress-attachments"); ?></h3>
+            <p><?php esc_html_e("If you use shortcodes to embed forums, and you rely on plugin to add JS and CSS, you also need to enable this option to skip checking for bbPress specific pages.", "gd-bbpress-attachments"); ?></p>
+            <p><?php esc_html_e("Plugin will attempt to load files automatically when needed. If that fails, try using this option.", "gd-bbpress-attachments"); ?></p>
             <table class="form-table">
                 <tbody>
                 <tr>
                     <th scope="row">
-                        <label for="include_always"><?php _e("Always Include", "gd-bbpress-attachments"); ?></label>
+                        <label for="include_always"><?php esc_html_e("Always Include", "gd-bbpress-attachments"); ?></label>
                     </th>
                     <td>
                         <input type="checkbox" <?php if ($options["include_always"] == 1) {
@@ -117,13 +117,13 @@
         </fieldset>
 
         <fieldset>
-            <h3><?php _e("Forums Integration", "gd-bbpress-attachments"); ?></h3>
-            <p><?php _e("With these options you can modify the forums to include attachment elements.", "gd-bbpress-attachments"); ?></p>
+            <h3><?php esc_html_e("Forums Integration", "gd-bbpress-attachments"); ?></h3>
+            <p><?php esc_html_e("With these options you can modify the forums to include attachment elements.", "gd-bbpress-attachments"); ?></p>
             <table class="form-table">
                 <tbody>
                 <tr>
                     <th scope="row">
-                        <label for="attachment_icon"><?php _e("Attachment Icon", "gd-bbpress-attachments"); ?></label>
+                        <label for="attachment_icon"><?php esc_html_e("Attachment Icon", "gd-bbpress-attachments"); ?></label>
                     </th>
                     <td>
                         <input type="checkbox" <?php if ($options["attachment_icon"] == 1) {
@@ -133,7 +133,7 @@
                 </tr>
                 <tr>
                     <th scope="row">
-                        <label for="attachment_icons"><?php _e("File Type Icons", "gd-bbpress-attachments"); ?></label>
+                        <label for="attachment_icons"><?php esc_html_e("File Type Icons", "gd-bbpress-attachments"); ?></label>
                     </th>
                     <td>
                         <input type="checkbox" <?php if ($options["attachment_icons"] == 1) {
@@ -146,7 +146,7 @@
         </fieldset>
 
         <p class="submit">
-            <input type="submit" value="<?php _e("Save Changes", "gd-bbpress-attachments"); ?>" class="button-primary gdbb-tools-submit" id="gdbb-attach-submit" name="gdbb-attach-submit"/>
+            <input type="submit" value="<?php esc_html_e("Save Changes", "gd-bbpress-attachments"); ?>" class="button-primary gdbb-tools-submit" id="gdbb-attach-submit" name="gdbb-attach-submit"/>
         </p>
     </div>
     <div class="d4p-settings-second">
