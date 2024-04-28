@@ -9,11 +9,11 @@
         init: function() {
             $("form#new-post").attr("enctype", "multipart/form-data");
 
-            $(document).on("click", ".d4p-bba-actions a", function(e){
+            $(document).on("click", ".d4p-bba-actions a", function(e) {
                 return confirm(gdbbPressAttachmentsInit.are_you_sure);
             });
 
-            $(document).on("click", ".d4p-attachment-addfile", function(e){
+            $(document).on("click", ".d4p-attachment-addfile", function(e) {
                 e.preventDefault();
 
                 var now = $(".bbp-attachments-form input[type=file]").length,

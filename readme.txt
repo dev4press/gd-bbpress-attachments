@@ -1,16 +1,16 @@
 === GD bbPress Attachments ===
 Contributors: GDragoN
 Donate link: https://plugins.dev4press.com/gd-bbpress-attachments/
-Version: 4.6
-Tags: dev4press, bbpress, attachments, upload, media library, forum, topic, reply, limit, meta
-Requires at least: 5.5
-Requires PHP: 7.3
-Tested up to: 6.2
+Version: 4.7
+Tags: dev4press, bbpress, attachments, upload, topic, reply, limit
+Requires at least: 5.8
+Requires PHP: 7.4
+Tested up to: 6.5
 Stable tag: trunk
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Implements attachments upload to the topics and replies in bbPress plugin through media library and add additional forum based controls.
+Implement attachments upload to the topics and replies in bbPress plugin through a media library and add additional forum-based controls.
 
 == Description ==
 GD bbPress Attachments is an easy-to-use plugin for WordPress and bbPress for implementing files upload for bbPress Forums topics and replies. You can control file sizes from the main plugin settings panel, or you can change some attachments settings for each forum individually. Currently, included features:
@@ -113,6 +113,9 @@ Another common issue is that WordPress Media Library upload is not working. If t
 No. This plugin requires the plugin versions of bbPress 2.6.2 or higher.
 
 == Upgrade Notice ==
+= 4.7 =
+Few updates and improvements.
+
 = 4.6 =
 Few updates and improvements.
 
@@ -120,6 +123,13 @@ Few updates and improvements.
 Tool to cleanup upload error logs. Various updates and improvements.
 
 == Changelog ==
+= 4.7 (2024.04.28) =
+* New directive `Requires Plugin` added into main plugin file
+* New System requirements: PHP 7.4 or newer
+* New System requirements: WordPress 5.8 or newer
+* New plugin fully tested with WordPress up to 6.5
+* New plugin fully tested with PHP 8.3
+
 = 4.6 (2023.05.26) =
 * New filter `d4p_bbpressattchment_login_url` for the login URL
 * New FAQ information included in the plugin readme file
