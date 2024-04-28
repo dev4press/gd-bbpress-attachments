@@ -18,21 +18,21 @@ GD bbPress Attachments is an easy-to-use plugin for WordPress and bbPress for im
 * Attachments are handled through WordPress media library. 
 * Limit the number of files to upload at once.
 * Embed a list of attached files into topics and replies.
-* Attachment icon in the topics list for topics with attachments.
+* Attachment icon in the topic list for topics with attachments.
 * Attachments icons for file types in the attachments list.
-* Option to control if visitors can see list of attachments.
+* Option to control if visitors can see a list of attachments.
 * Display uploaded images as thumbnails.
 * Control thumbnail size.
 * Control thumbnail CLASS and REL attributes.
 * Upload errors can be logged.
 * Post author and administrators can see errors.
-* Tool to cleanup uploads error log entries from postmeta table.
+* Tool to clean up uploads error log entries from postmeta table.
 * Administration: attachments count for topics and replies.
 * Administration: metabox for settings override for forums.
 * Administration: metabox with attachments list and errors for topics and replies.
 
 = bbPress Plugin Versions =
-GD bbPress Attachments 4.5 supports bbPress 2.6.2 or newer. Older bbPress versions are no longer supported!
+GD bbPress Attachments 4.7 supports bbPress 2.6.2 or newer. Older bbPress versions are no longer supported!
 
 = More free Dev4Press plugins for bbPress =
 * [GD Forum Manager](https://wordpress.org/plugins/gd-forum-manager-for-bbpress/) - quick and bulk forums and topics edit
@@ -76,10 +76,10 @@ With more features on the roadmap exclusively for Pro version.
 
 == Installation ==
 = General Requirements =
-* PHP: 7.3 or newer
+* PHP: 7.4 or newer
 
 = WordPress Requirements =
-* WordPress: 5.5 or newer
+* WordPress: 5.8 or newer
 
 = bbPress Requirements =
 * bbPress Plugin: 2.6.2 or newer
@@ -129,6 +129,7 @@ Tool to cleanup upload error logs. Various updates and improvements.
 * New System requirements: WordPress 5.8 or newer
 * New plugin fully tested with WordPress up to 6.5
 * New plugin fully tested with PHP 8.3
+* Updated code style and translation formatting
 
 = 4.6 (2023.05.26) =
 * New filter `d4p_bbpressattchment_login_url` for the login URL
