@@ -1,8 +1,8 @@
 === GD bbPress Attachments ===
 Contributors: GDragoN
 Donate link: https://plugins.dev4press.com/gd-bbpress-attachments/
-Version: 4.7
-Tags: dev4press, bbpress, attachments, upload, topic, reply, limit
+Version: 4.7.1
+Tags: dev4press, bbpress, attachments, upload, limit
 Requires at least: 5.8
 Requires PHP: 7.4
 Tested up to: 6.5
@@ -123,6 +123,9 @@ Few updates and improvements.
 Tool to cleanup upload error logs. Various updates and improvements.
 
 == Changelog ==
+= 4.7.1 (2024.05.15) =
+* Edit various small updates to readme file
+
 = 4.7 (2024.04.28) =
 * New directive `Requires Plugin` added into main plugin file
 * New System requirements: PHP 7.4 or newer
