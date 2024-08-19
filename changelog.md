@@ -2,6 +2,10 @@
 
 ## Changelog
 
+### Version: 4.7.2 (2024.08.19)
+* **edit** updated links to the Dev4Press website
+* **edit** various PHP code changes and improvements
+
 ### Version 4.7.1 (2024.05.15)
 * **edit** various small updates to readme file
 

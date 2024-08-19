@@ -8,7 +8,7 @@ class GDATTAdmin {
 	private $page_ids = array();
 	private $admin_plugin = false;
 
-	function __construct() {
+	public function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'load' ) );
 	}
 
@@ -76,7 +76,7 @@ class GDATTAdmin {
 
 	public function plugin_links( $links, $file ) {
 		if ( $file == 'gd-bbpress-attachments/gd-bbpress-attachments.php' ) {
-			$links[] = '<a target="_blank" style="color: #cc0000; font-weight: bold;" href="https://plugins.dev4press.com/gd-bbpress-toolbox/">' . esc_html__( 'Upgrade to GD bbPress Toolbox Pro', 'gd-bbpress-attachments' ) . '</a>';
+			$links[] = '<a target="_blank" style="color: #cc0000; font-weight: bold;" href="https://www.dev4press.com/plugins/gd-bbpress-toolbox/">' . esc_html__( 'Upgrade to GD bbPress Toolbox Pro', 'gd-bbpress-attachments' ) . '</a>';
 		}
 
 		return $links;
@@ -94,10 +94,10 @@ class GDATTAdmin {
 		$screen->add_help_tab( array(
 			"id"      => "gdpt-screenhelp-help",
 			"title"   => esc_html__( 'Get Help', 'gd-bbpress-attachments' ),
-			"content" => '<h5>' . esc_html__( 'General Plugin Information', 'gd-bbpress-attachments' ) . '</h5>
-                <p><a href="https://plugins.dev4press.com/gd-bbpress-attachments/" target="_blank">' . esc_html__( 'Home Page on Dev4Press.com', 'gd-bbpress-attachments' ) . '</a> | 
+			"content" => '<h2>' . esc_html__( 'General Plugin Information', 'gd-bbpress-attachments' ) . '</h2>
+                <p><a href="https://www.dev4press.com/plugins/gd-bbpress-attachments/" target="_blank">' . esc_html__( 'Home Page on Dev4Press.com', 'gd-bbpress-attachments' ) . '</a> | 
                 <a href="https://wordpress.org/plugins/gd-bbpress-attachments/" target="_blank">' . esc_html__( 'Home Page on WordPress.org', 'gd-bbpress-attachments' ) . '</a></p> 
-                <h5>' . esc_html__( 'Getting Plugin Support', 'gd-bbpress-attachments' ) . '</h5>
+                <h2>' . esc_html__( 'Getting Plugin Support', 'gd-bbpress-attachments' ) . '</h2>
                 <p><a href="https://support.dev4press.com/forums/forum/plugins-free/gd-bbpress-attachments/" target="_blank">' . esc_html__( 'Support Forum on Dev4Press.com', 'gd-bbpress-attachments' ) . '</a> | 
                 <a href="https://wordpress.org/support/plugin/gd-bbpress-attachments" target="_blank">' . esc_html__( 'Support Forum on WordPress.org', 'gd-bbpress-attachments' ) . '</a> </p>',
 		) );
@@ -107,8 +107,8 @@ class GDATTAdmin {
 			"title"   => "Dev4Press",
 			"sfc",
 			"content" => '<p>' . esc_html__( 'On Dev4Press website you can find many useful plugins, themes and tutorials, all for WordPress. Please, take a few minutes to browse some of these resources, you might find some of them very useful.', 'gd-bbpress-attachments' ) . '</p>
-                <p><a href="https://plugins.dev4press.com/plugins/" target="_blank"><strong>' . esc_html__( 'Plugins', 'gd-bbpress-attachments' ) . '</strong></a> - ' . esc_html__( 'We have more than 10 plugins available, some of them are commercial and some are available for free.', 'gd-bbpress-attachments' ) . '</p>
-                <p><a href="https://support.dev4press.com/kb/" target="_blank"><strong>' . esc_html__( 'Knowledge Base', 'gd-bbpress-attachments' ) . '</strong></a> - ' . esc_html__( 'Premium and free tutorials for our plugins themes, and many general and practical WordPress tutorials.', 'gd-bbpress-attachments' ) . '</p>
+                <p><a href="https://www.dev4press.com/plugins/" target="_blank"><strong>' . esc_html__( 'Plugins', 'gd-bbpress-attachments' ) . '</strong></a> - ' . esc_html__( 'We have more than 10 plugins available, some of them are commercial and some are available for free.', 'gd-bbpress-attachments' ) . '</p>
+                <p><a href="https://www.dev4press.com/kb/" target="_blank"><strong>' . esc_html__( 'Knowledge Base', 'gd-bbpress-attachments' ) . '</strong></a> - ' . esc_html__( 'Premium and free tutorials for our plugins themes, and many general and practical WordPress tutorials.', 'gd-bbpress-attachments' ) . '</p>
                 <p><a href="https://support.dev4press.com/forums/" target="_blank"><strong>' . esc_html__( 'Support Forums', 'gd-bbpress-attachments' ) . '</strong></a> - ' . esc_html__( 'Premium support forum for all with valid licenses to get help. Also, report bugs and leave suggestions.', 'gd-bbpress-attachments' ) . '</p>',
 		) );
 	}

@@ -25,7 +25,7 @@ class GDATTFront {
 		'icon'       => 'ico',
 	);
 
-	function __construct() {
+	public function __construct() {
 		add_action( 'bbp_init', array( $this, 'load' ) );
 	}
 

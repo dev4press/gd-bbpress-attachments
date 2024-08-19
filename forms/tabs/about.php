@@ -31,9 +31,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<?php
 
 		esc_html_e( 'PHP: ', 'gd-bbpress-attachments' );
-		echo '<strong>7.0 or newer</strong><br/>';
+		echo '<strong>7.4 or newer</strong><br/>';
 		esc_html_e( 'WordPress: ', 'gd-bbpress-attachments' );
-		echo '<strong>5.3 or newer</strong><br/>';
+		echo '<strong>5.9 or newer</strong><br/>';
 		esc_html_e( 'bbPress: ', 'gd-bbpress-attachments' );
 		echo '<strong>2.6.2 or newer</strong>';
 
@@ -42,7 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     <fieldset>
         <h3><?php esc_html_e( 'Important Plugin Links', 'gd-bbpress-attachments' ); ?></h3>
-        <a target="_blank" href="https://plugins.dev4press.com/gd-bbpress-attachments/">GD bbPress Attachments <?php esc_html_e( 'Home Page', 'gd-bbpress-attachments' ); ?></a><br/>
+        <a target="_blank" href="https://www.dev4press.com/plugins/gd-bbpress-attachments/">GD bbPress Attachments <?php esc_html_e( 'Home Page', 'gd-bbpress-attachments' ); ?></a><br/>
         <a target="_blank" href="https://wordpress.org/plugins/gd-bbpress-attachments/">GD bbPress Attachments <?php esc_html_e( 'on', 'gd-bbpress-attachments' ); ?> WordPress.org</a>
         <h3><?php esc_html_e( 'Plugin Support', 'gd-bbpress-attachments' ); ?></h3>
         <a target="_blank" href="https://support.dev4press.com/forums/forum/plugins-free/gd-bbpress-attachments/"><?php esc_html_e( 'Plugin Support Forum on Dev4Press', 'gd-bbpress-attachments' ); ?></a><br/>

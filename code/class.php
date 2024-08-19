@@ -12,7 +12,7 @@ class GDATTCore {
 	public $l;
 	public $o;
 
-	function __construct() {
+	public function __construct() {
 		global $wp_version;
 
 		$this->wp_version = substr( str_replace( '.', '', $wp_version ), 0, 2 );

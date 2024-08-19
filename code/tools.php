@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class GDATTTools {
-	function __construct() {
+	public function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'load' ) );
 	}
 

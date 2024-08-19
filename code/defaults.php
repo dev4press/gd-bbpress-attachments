@@ -6,9 +6,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 class GDATTDefaults {
 	var $default_options = array(
-		'version'                      => '4.7.1',
-		'date'                         => '2024.05.15.',
-		'build'                        => 2560,
+		'version'                      => '4.7.2',
+		'date'                         => '2024.08.19.',
+		'build'                        => 2570,
 		'status'                       => 'Stable',
 		'product_id'                   => 'gd-bbpress-attachments',
 		'edition'                      => 'free',
@@ -39,7 +39,7 @@ class GDATTDefaults {
 		'delete_visible_to_author'     => 'no',
 	);
 
-	function __construct() {
+	public function __construct() {
 	}
 }
 
