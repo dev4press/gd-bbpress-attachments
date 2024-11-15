@@ -1,11 +1,11 @@
 === GD bbPress Attachments ===
 Contributors: GDragoN
 Donate link: https://www.dev4press.com/plugins/gd-bbpress-attachments/
-Version: 4.7.2
+Version: 4.7.3
 Tags: dev4press, bbpress, attachments, upload, limit
 Requires at least: 5.9
 Requires PHP: 7.4
-Tested up to: 6.6
+Tested up to: 6.7
 Stable tag: trunk
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
