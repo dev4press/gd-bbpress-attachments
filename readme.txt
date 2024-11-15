@@ -39,7 +39,7 @@ GD bbPress Attachments 4.7 supports bbPress 2.6.2 or newer. Older bbPress versio
 * [GD Members Directory](https://wordpress.org/plugins/gd-members-directory-for-bbpress/) - add new page with list of all forum members
 * [GD Power Search](https://wordpress.org/plugins/gd-power-search-for-bbpress/) - add advanced search to the bbPress topics
 * [GD bbPress Tools](https://wordpress.org/plugins/gd-bbpress-tools/) - various expansion tools for forums
-* [GD Topic Polls](https://wordpress.org/plugins/gd-topic-polls/) - add polls to the bbPress topics
+* [topicPolls for bbPress](https://wordpress.org/plugins/gd-topic-polls/) - add polls to the bbPress topics
 
 = Upgrade to GD bbPress Toolbox Pro =
 The Pro version contains many more great features:
@@ -123,6 +123,11 @@ Few updates and improvements.
 Tool to cleanup upload error logs. Various updates and improvements.
 
 == Changelog ==
+= 4.7.3 (2024.11.15) =
+* Edit: proper escaping of the URL's in several instances
+* Edit: proper sanitization of the HTML class in few instances
+* Fix: reflected cross-site scripting with the attachment actions
+
 = 4.7.2 (2024.08.19) =
 * Edit: updated links to the Dev4Press website
 * Edit: various PHP code changes and improvements
