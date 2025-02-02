@@ -2,8 +2,9 @@
 
 ## Changelog
 
-### Version: 4.7.3 (2024.11.15)
+### Version: 4.8 (2025.02.08)
 
+### Version: 4.7.3 (2024.11.15)
 * **edit** proper escaping of the URL's in several instances
 * **edit** proper sanitization of the HTML class in few instances
 * **fix** reflected cross-site scripting with the attachment actions
@@ -22,10 +23,3 @@
 * **new** plugin fully tested with WordPress up to 6.5
 * **new** plugin fully tested with PHP 8.3
 * **edit** code style and translation formatting
-
-### Version 4.6 (2023.05.26)
-* **new** filter `d4p_bbpressattchment_login_url` for the login URL
-* **new** FAQ information included in the plugin readme file
-* **new** plugin is tested with the upload of the WEBP images
-* **edit** more settings page with use of escaping for attributes
-* **edit** icons format definition for attached files
