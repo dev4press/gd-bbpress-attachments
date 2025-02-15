@@ -36,11 +36,19 @@ if ( ! defined( 'GDBBPRESSATTACHMENTS_CAP' ) ) {
 	define( 'GDBBPRESSATTACHMENTS_CAP', 'activate_plugins' );
 }
 
-require_once dirname( __FILE__ ) . '/code/defaults.php';
-require_once dirname( __FILE__ ) . '/code/shared.php';
-require_once dirname( __FILE__ ) . '/code/sanitize.php';
+define( 'GDBBPRESSATTACHMENTS_FILE', __FILE__ );
+define( 'GDBBPRESSATTACHMENTS_PATH', __DIR__ . '/' );
+define( 'GDBBPRESSATTACHMENTS_URL', plugins_url( '/', __FILE__ ) );
 
-require_once dirname( __FILE__ ) . '/code/class.php';
-require_once dirname( __FILE__ ) . '/code/public.php';
+require_once GDBBPRESSATTACHMENTS_PATH . 'vendor/autoload.php';
+
+require_once GDBBPRESSATTACHMENTS_PATH . 'code/freemius.php';
+
+require_once GDBBPRESSATTACHMENTS_PATH . 'code/defaults.php';
+require_once GDBBPRESSATTACHMENTS_PATH . 'code/shared.php';
+require_once GDBBPRESSATTACHMENTS_PATH . 'code/sanitize.php';
+
+require_once GDBBPRESSATTACHMENTS_PATH . 'code/class.php';
+require_once GDBBPRESSATTACHMENTS_PATH . 'code/public.php';
 
 GDATTCore::instance();

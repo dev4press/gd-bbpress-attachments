@@ -2,7 +2,13 @@
 
 ## Changelog
 
-### Version: 4.8 (2025.02.08)
+### Version: 4.8 (2025.02.15)
+* **new** integration with `Freemius SDK`
+* **new** option to upgrade to `forumToolbox for bbPress`
+* **edit** a lot of small PHP code related updates
+* **edit** changes to many of the links nad plugin names
+* **fix** problem with the plugin directory name
+* **fix** issue with loading plugin translation files
 
 ### Version: 4.7.3 (2024.11.15)
 * **edit** proper escaping of the URL's in several instances

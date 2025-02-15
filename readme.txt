@@ -41,8 +41,8 @@ GD bbPress Attachments 4.8 supports bbPress 2.6.2 or newer. Older bbPress versio
 * [powerSearch for bbPress](https://wordpress.org/plugins/gd-power-search-for-bbpress/) - add advanced search to the bbPress topics
 * [topicPolls for bbPress](https://wordpress.org/plugins/gd-topic-polls/) - add polls to the bbPress topics
 
-= Upgrade to GD bbPress Toolbox Pro =
-The Pro version contains many more great features:
+= Upgrade to forumToolbox for bbPress =
+The Pro version contains 63 features, with over 500 options to control the integration:
 
 * Enhanced attachments features
 * Limit file types attachments upload
@@ -69,10 +69,10 @@ The Pro version contains many more great features:
 * Many great tweaks
 * And much, much more
 
-With more features on the roadmap exclusively for Pro version.
+With more features on the roadmap exclusively for a Pro version.
 
-* More information about [GD bbPress Toolbox Pro](https://www.dev4press.com/plugins/gd-bbpress-toolbox/)
-* More Premium plugins for bbPress [bbPress Plugins Club](https://www.dev4press.com/bbpress-club/)
+* More information about [forumToolbox for bbbPress](https://www.dev4press.com/plugins/gd-bbpress-toolbox/)
+* More Premium plugins with [bbPress Plugins Club](https://www.dev4press.com/bbpress-club/)
 
 == Installation ==
 = General Requirements =
@@ -123,7 +123,13 @@ Few updates and improvements.
 Few updates and improvements.
 
 == Changelog ==
-= 4.8 (2025.02.08) =
+= 4.8 (2025.02.15) =
+* New: integration with `Freemius SDK`
+* New: option to upgrade to `forumToolbox for bbPress`
+* Edit: a lot of small PHP code related updates
+* Edit: changes to many of the links nad plugin names
+* Fix: problem with the plugin directory name
+* Fix: issue with loading plugin translation files
 
 = 4.7.3 (2024.11.15) =
 * Edit: proper escaping of the URL's in several instances
