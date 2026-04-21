@@ -1,17 +1,18 @@
-# GD bbPress Attachments
+# forumAttachments for bbPress
 
 ## Changelog
 
-### Version: 4.9.4 (2026.04.12)
+### Version: 5.0 (2026.10.23)
+* **new** plugin name change in line with other plugins rebranding
+* **edit** Freemius SDK 2.13.5
 
+### Version: 4.9.4 (2026.04.12)
 * **edit** Freemius SDK 2.13.1
 
 ### Version: 4.9.3 (2025.12.26)
-
 * **fix** issue with composer installation content hash
 
 ### Version: 4.9.2 (2025.12.17)
-
 * **fix** server reported upload errors were not handled properly
 
 ### Version: 4.9.1 (2025.11.14)

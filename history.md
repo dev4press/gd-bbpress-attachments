@@ -1,4 +1,4 @@
-# GD bbPress Attachments
+# forumAttachments for bbPress
 
 ## Changelog
 

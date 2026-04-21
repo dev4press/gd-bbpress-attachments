@@ -5,20 +5,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 class GDATTCore {
-	private $wp_version;
-	private $plugin_path;
-	private $plugin_url;
-
 	public $l;
 	public $o;
 
 	public function __construct() {
-		global $wp_version;
-
-		$this->plugin_path = GDBBPRESSATTACHMENTS_PATH;
-		$this->plugin_url  = GDBBPRESSATTACHMENTS_URL;
-		$this->wp_version  = substr( str_replace( '.', '', $wp_version ), 0, 2 );
-
 		$gdd = new GDATTDefaults();
 
 		$this->o = get_option( 'gd-bbpress-attachments' );
@@ -46,7 +36,7 @@ class GDATTCore {
 		add_action( 'after_setup_theme', array( $this, 'load' ), 5 );
 	}
 
-	public static function instance() {
+	public static function instance() : GDATTCore{
 		static $instance = false;
 
 		if ( $instance === false ) {
@@ -77,7 +67,7 @@ class GDATTCore {
 		return $old;
 	}
 
-	public function load() {
+	public function load() : void {
 		load_plugin_textdomain( 'gd-bbpress-attachments' );
 
 		add_action( 'init', array( $this, 'init_thumbnail_size' ), 1 );
@@ -98,11 +88,11 @@ class GDATTCore {
 		}
 	}
 
-	public function init_thumbnail_size() {
+	public function init_thumbnail_size() : void {
 		add_image_size( 'd4p-bbp-thumb', $this->o['image_thumbnail_size_x'], $this->o['image_thumbnail_size_y'], true );
 	}
 
-	public function delete_attachments() {
+	public function delete_attachments() : void {
 		if ( isset( $_GET['d4pbbaction'] ) ) {
 			$nonce = wp_verify_nonce( sanitize_text_field( wp_unslash( $_GET['_wpnonce'] ?? '' ) ), 'd4p-bbpress-attachments' );
 
@@ -163,7 +153,7 @@ class GDATTCore {
 		}
 	}
 
-	public function delete_post( $id ) {
+	public function delete_post( $id ) : void {
 		if ( d4p_has_bbpress() ) {
 			if ( bbp_is_reply( $id ) || bbp_is_topic( $id ) ) {
 				if ( $this->o['delete_attachments'] == 'delete' ) {
