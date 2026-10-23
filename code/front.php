@@ -295,7 +295,8 @@ class GDATTFront {
 		$count    = d4p_topic_attachments_count( $topic_id, true );
 
 		if ( $count > 0 ) {
-			echo '<span class="bbp-attachments-count" title="' . esc_attr( $count . ' ' . _n( 'attachment', 'attachments', $count, 'gd-bbpress-attachments' ) ) . '"></span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			$label = sprintf( _n( '%s attachment', '%s attachments', $count, 'gd-bbpress-attachments' ), number_format_i18n( $count ) );
+			printf( '<span class="bbp-attachments-count" role="img" aria-label="%1$s" title="%1$s"></span>', $label );
 		}
 	}
 
