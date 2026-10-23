@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2db031ad34ad8aabddb7527a02e62cd6",
+    "content-hash": "141428314ad73a584788c84505cb54c5",
     "packages": [
         {
             "name": "freemius/wordpress-sdk",
-            "version": "2.13.1",
+            "version": "2.13.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Freemius/wordpress-sdk.git",
-                "reference": "7376c0eca1ae7f92aaba9d3b550bd10affe797ff"
+                "reference": "0875c4ee3c941572f44d60cb2a687c54295db3d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Freemius/wordpress-sdk/zipball/7376c0eca1ae7f92aaba9d3b550bd10affe797ff",
-                "reference": "7376c0eca1ae7f92aaba9d3b550bd10affe797ff",
+                "url": "https://api.github.com/repos/Freemius/wordpress-sdk/zipball/0875c4ee3c941572f44d60cb2a687c54295db3d7",
+                "reference": "0875c4ee3c941572f44d60cb2a687c54295db3d7",
                 "shasum": ""
             },
             "require": {
@@ -30,7 +30,7 @@
                 "phpstan/extension-installer": "^1.3",
                 "squizlabs/php_codesniffer": "^3.7",
                 "szepeviktor/phpstan-wordpress": "^1.3",
-                "wp-coding-standards/wpcs": "^2.3"
+                "wp-coding-standards/wpcs": "^3.4.1"
             },
             "type": "library",
             "autoload": {
@@ -55,9 +55,9 @@
             ],
             "support": {
                 "issues": "https://github.com/Freemius/wordpress-sdk/issues",
-                "source": "https://github.com/Freemius/wordpress-sdk/tree/2.13.1"
+                "source": "https://github.com/Freemius/wordpress-sdk/tree/2.13.5"
             },
-            "time": "2026-03-25T15:26:13+00:00"
+            "time": "2026-10-22T12:00:44+00:00"
         }
     ],
     "packages-dev": [],
@@ -66,7 +66,9 @@
     "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
-    "platform": {},
+    "platform": {
+        "php": ">=8.0"
+    },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
 }
