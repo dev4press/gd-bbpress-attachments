@@ -296,7 +296,7 @@ class GDATTFront {
 
 		if ( $count > 0 ) {
 			$label = sprintf( _n( '%s attachment', '%s attachments', $count, 'gd-bbpress-attachments' ), number_format_i18n( $count ) );
-			printf( '<span class="bbp-attachments-count" role="img" aria-label="%1$s" title="%1$s"></span>', $label );
+			printf( '<span class="bbp-attachments-count" role="img" aria-label="%1$s" title="%1$s"></span>', esc_attr( $label ) );
 		}
 	}
 

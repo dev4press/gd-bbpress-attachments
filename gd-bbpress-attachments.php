@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name:       forumAttachments for bbPress
  * Plugin URI:        https://www.dev4press.com/plugins/gd-bbpress-attachments/
