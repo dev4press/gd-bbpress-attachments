@@ -126,6 +126,8 @@ Few updates and improvements.
 == Changelog ==
 = 5.0 (2026.10.23) =
 * New: plugin name change in line with other plugins rebranding
+* Edit: improvements to the attachment upload handling
+* Edit: security hardening with improved escaping and sanitization
 * Edit: Freemius SDK 2.13.5
 
 = 4.9.4 (2026.04.12) =
