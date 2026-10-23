@@ -1,5 +1,17 @@
 {
-    "require": {
-        "freemius/wordpress-sdk": "^2.0.0.17805"
-    }
+  "require": {
+    "freemius/wordpress-sdk": "^2.0.0.17805",
+    "php": ">=8.0"
+  },
+  "scripts": {
+    "post-cleanup": [
+      "rm -rf vendor/bin"
+    ],
+    "post-install-cmd": [
+      "@post-cleanup"
+    ],
+    "post-update-cmd": [
+      "@post-cleanup"
+    ]
+  }
 }

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Plural - Forms: nplurals = INTEGER; plural = EXPRESSION;\n"
-"Project-Id-Version: GD bbPress Attachments\n"
+"Project-Id-Version: forumAttachments for bbPress\n"
 "POT-Creation-Date: 04/28/2024 12:25:14 PM\n"
 "Language-Team: Milan Petrovic <support@dev4press.com>\n"
 "MIME-Version: 1.0\n"
